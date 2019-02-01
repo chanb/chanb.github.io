@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, this is Bryan! I'm currently a MScAC student at University of Toronto and I did my undergrad at University of Toronto Scarborough. I was pretty "goalless" until recently where I started falling in love with Reinforcement learning. Specifically, I am currently interested in how RL agents can be adaptive to different environments with minimal training. In other words, I am currently most interested in how metalearning, imitation learning, and few-shot learning can benefit! I have yet to read about inverse RL and transfer learning but I think I will end up being interested :)
+Hi, this is Bryan! I'm currently a MScAC student at University of Toronto and I did my undergrad at University of Toronto Scarborough. I was pretty "goalless" until recently where I started falling in love with reinforcement learning. Specifically, I am currently interested in how RL agents can be adaptive to different environments with minimal training. In other words, I am currently most interested in how metalearning, imitation learning, and few-shot learning can benefit! I have yet to read about inverse RL and transfer learning but I think I will end up being interested :)
 
 I am still very rusty as I just started last year but I plan to write some blogs every now and then on what I think about recent published papers! Hopefully at some point I can publish a few papers related to RL!
 
