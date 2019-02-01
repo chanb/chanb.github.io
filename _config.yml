@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "My Take on RL"
+title                    : "chanb's Adventure in RL"
 title_separator          : "-"
 name                     : &name "Bryan Chan"
 description              : &description "MScAC student at University of Toronto"
@@ -83,9 +83,9 @@ author:
   name             : "Bryan Chan"
   avatar           : "profile.png"
   bio              : "A University of Toronto MScAC student who just started getting interested in Reinforcement Learning"
-  location         : "Location"
+  location         : "Toronto"
   employer         :
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  googlescholar    : 
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -95,19 +95,19 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : "chanb"
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : 
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackoverflow    : 
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : 
   vine             :
   weibo            :
   xing             :
