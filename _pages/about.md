@@ -8,10 +8,10 @@ redirect_from:
   - /about.html
 ---
 
-Hi, this is Bryan! I'm currently a MScAC student at University of Toronto and I did my undergrad at University of Toronto Scarborough. I was pretty "goalless" until recently where I started falling in love with reinforcement learning. Specifically, I am currently interested in how RL agents can be adaptive to different environments with minimal training. In other words, I am currently most interested in how metalearning, imitation learning, and few-shot learning can benefit! I have yet to read about inverse RL and transfer learning but I think I will end up being interested :)
+Hi, I'm Bryan! I recently completed my MScAC at the University of Toronto and was fortunate to have interned at Kindred AI. I am currently a Teaching Assistant at the University of Toronto Scarborough for the AI course and the ML course. I am using my remaining time to do research projects (Hopefully I get a publication soon!). My life-long goal is to create autonomous agents that are adaptive to real-life applications. To achieve my goal, I focus my research in Reinforcement Learning, Robotics, Meta-Learning, and Continual Learning.
 
-I am still very rusty as I just started last year but I plan to write some blogs every now and then on what I think about recent published papers! Hopefully at some point I can publish a few papers related to RL!
+Outside of academic, I enjoy stuff related to basketball (sometimes soccer), cars, movies, and games! I used to be top 0.02% in League of Legends during season 3 (I was pretty proud) and was considering going pro.
 
-Outside of academic, I enjoy stuff related to basketball (sometimes soccer), cars, movies, and games! I used to be "addicted" to games and got to a point where I was top 0.02% in League of Legends during season 3 (I was pretty proud).
+Anyway, I am interested in collaborating on research projects and feel free to contact me at **chanb@cs.toronto.edu**! I'm fluent in English and Cantonese (Proficient in Mandarin) so feel free to message me in Chinese as well!
 
-Anyway, feel free to contact me at **chanb** at **cs** dot **toronto** dot **edu**! I'm fluent in English and Cantonese (Proficient in Mandarin) so feel free to message me in Chinese as well!
+My resume can be found [here](../files/Resume_No_Phone.pdf).

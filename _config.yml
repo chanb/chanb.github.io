@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "chanb's Adventure in RL"
+title                    : "Bryan Chan's Website"
 title_separator          : "-"
 name                     : &name "Bryan Chan"
-description              : &description "MScAC student at University of Toronto"
+description              : &description "Teaching Assistant at University of Toronto Scarborough"
 url                      : "https://chanb.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "chanb.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Bryan Chan"
   avatar           : "profile.png"
-  bio              : "A University of Toronto MScAC student who just started getting interested in Reinforcement Learning"
+  bio              : "Currently a Teaching Assistant at University of Toronto Scarborough. Research Focus: Reinforcement Learning, Robotics, Meta-Learning, and Continual Learning"
   location         : "Toronto"
   employer         :
   googlescholar    : 
