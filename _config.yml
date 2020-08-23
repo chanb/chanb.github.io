@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Bryan Chan's Website"
 title_separator          : "-"
 name                     : &name "Bryan Chan"
-description              : &description "Teaching Assistant at University of Toronto Scarborough"
+description              : &description "RL Researcher at Kindred AI"
 url                      : "https://chanb.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "chanb.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Bryan Chan"
   avatar           : "profile.png"
-  bio              : "Currently a Teaching Assistant at University of Toronto Scarborough. Research Focus: Reinforcement Learning, Robotics, Meta-Learning, and Continual Learning"
+  bio              : "Currently a RL researcher at Kindred AI and a sessional lecturer at University of Toronto Scarborough. Research Focus: Reinforcement Learning, Robotics, Meta-Learning, and Continual Learning"
   location         : "Toronto"
   employer         :
   googlescholar    : 

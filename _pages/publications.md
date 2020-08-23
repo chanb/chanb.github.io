@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-My trophy case is currently empty.
+O. Limoyo, B. Chan, F. Maric, B. Wagstaff, A. R. Mahmood and J. Kelly, "Heteroscedastic Uncertainty for Robust Generative Latent Dynamics," in IEEE Robotics and Automation Letters, doi: 10.1109/LRA.2020.3015449.
 
 {% if author.googlescholar %}
   You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
