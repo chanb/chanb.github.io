@@ -13,5 +13,3 @@ Hi, I'm Bryan! I recently completed my MScAC at the University of Toronto and wa
 Outside of academic, I enjoy stuff related to basketball (sometimes soccer), cars, movies, and games! I used to be top 0.02% in League of Legends during season 3 (I was pretty proud) and was considering going pro.
 
 Anyway, I am interested in collaborating on research projects and feel free to contact me at **chanb@cs.toronto.edu**! I'm fluent in English and Cantonese (Proficient in Mandarin) so feel free to message me in Chinese as well!
-
-My CV can be found [here](../files/Curriculum_Vitae.pdf).
