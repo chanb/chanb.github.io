@@ -84,9 +84,9 @@ author:
   avatar           : "profile.png"
   bio              : "Currently a RL researcher at Kindred AI and a sessional lecturer at University of Toronto Scarborough. Research Focus: Reinforcement Learning, Robotics, Meta-Learning, and Continual Learning"
   location         : "Toronto"
-  employer         :
-  googlescholar    : 
-  email            :
+  employer         : "Kindred AI & University of Toronto"
+  googlescholar    : "https://scholar.google.com/citations?user=Gy7DMdcAAAAJ"
+  email            : "chanb@cs.toronto.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -107,7 +107,7 @@ author:
   stackoverflow    : 
   steam            :
   tumblr           :
-  twitter          : 
+  twitter          : "chanpyb"
   vine             :
   weibo            :
   xing             :
