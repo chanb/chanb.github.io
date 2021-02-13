@@ -8,7 +8,6 @@ venue: "University of Toronto"
 location: "Toronto, Canada"
 ---
 
-I am fortunate enough to have the opportunity to teach multiple courses. This experience has been granting me the opportunity to learn more as I need to thoroughly understand the course materials to convey the concepts in simple terms.
 - Artificial Intelligence - CSCD84 (Winter 2020)
 - Introduction to Machine Learning - CSCC11 (Winter 2020)
 - Artificial Intelligence - CSCD84 (Winter 2019)

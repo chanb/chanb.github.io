@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Bryan Chan"
   avatar           : "profile.png"
-  bio              : "Currently a RL researcher at Kindred AI and a sessional lecturer at University of Toronto Scarborough. Research Focus: Reinforcement Learning, Robotics, Meta-Learning, and Continual Learning"
+  bio              : ""
   location         : "Toronto"
   employer         : "Kindred AI & University of Toronto"
   googlescholar    : "https://scholar.google.com/citations?user=Gy7DMdcAAAAJ"
