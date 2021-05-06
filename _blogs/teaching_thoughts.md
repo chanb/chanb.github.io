@@ -1,7 +1,10 @@
 ---
 title: 'Scattered Thoughts - My Lessons Learned on Teaching'
+collection: blogs
 date: 2021-05-05
-permalink: /blogs/2011/05/teaching_thoughts/
+permalink: /blogs/2021/05/teaching_thoughts/
+venue: "University of Toronto"
+location: "Toronto, Canada"
 tags:
   - Teaching
 ---
