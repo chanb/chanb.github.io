@@ -7,6 +7,7 @@ venue: "University of Toronto"
 location: "Toronto, Canada"
 tags:
   - Teaching
+  - Scattered Thoughts
 ---
 
 I have been teaching at the university level for quite some time and I cherished the experience. When it comes to teaching, I wholeheartedly put my efforts in creating and delivering interesting tutorials/lectures. As a teacher, I see myself as a pacemaker where I enable my students to excel in their respective ways. As a learner, these opportunities granted me an excuse to exercise the Feynman Technique where I can relearn the same material through another perspective. Well, these are kind of expected when I signed up to be a teacher, but not the following when I became an instructor...
