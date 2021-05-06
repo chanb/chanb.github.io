@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 [1] O. Limoyo, **B. Chan**, F. Maric, B. Wagstaff, A. R. Mahmood and J. Kelly, "Heteroscedastic Uncertainty for Robust Generative Latent Dynamics," in IEEE Robotics and Automation Letters, doi: 10.1109/LRA.2020.3015449.  
-<img src="/images/heteroscedastic_uncertainty.svg" alt="heteroscedastic_uncertainty" width="500"/>  
+<img src="/images/heteroscedastic_uncertainty.svg" width="500"/>  
 [arXiv](https://arxiv.org/abs/2008.08157) | [Code](https://github.com/utiasSTARS/robust-latent-srl) | [Presentation](https://www.youtube.com/watch?v=tPLUqhobVzw&ab_channel=UTIASSTARSLab)  
 
 
