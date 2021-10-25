@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 [1] T. Ablett*, **B. Chan***, and J. Kelly, "Learning from Guided Play: A Scheduled Hierarchical Approach for Improving Exploration in Adversarial Imitation Learning," _(to appear)_ in Thirty-fifth Conference on Neural Information Processing Systems (NeurIPS),  Deep Reinforcement Learning Workshop.  
-<img src="/images/pubs/lfgp.svg" width="500"/>  
+<img src="/images/pubs/lfgp.svg" width="800"/>  
 
 [2] O. Limoyo, **B. Chan**, F. Maric, B. Wagstaff, A. R. Mahmood and J. Kelly, "Heteroscedastic Uncertainty for Robust Generative Latent Dynamics," in IEEE Robotics and Automation Letters, doi: 10.1109/LRA.2020.3015449.  
 <img src="/images/pubs/heteroscedastic_uncertainty.svg" width="500"/>  
