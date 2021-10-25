@@ -1,5 +1,5 @@
 ---
-title: 'Scattered Thoughts - My Lessons Learned on Teaching'
+title: 'Scattered Thoughts: My Lessons Learned on Teaching'
 collection: blogs
 date: 2021-10-24
 permalink: /blogs/2021/05/teaching_thoughts/
