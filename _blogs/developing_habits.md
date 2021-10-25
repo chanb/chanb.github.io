@@ -2,7 +2,7 @@
 title: 'Scattered Thoughts: Developing Habits'
 collection: blogs
 date: 2021-10-24
-permalink: /blogs/2021/05/developing_habits/
+permalink: /blogs/2021/10/developing_habits/
 tags:
   - Habits
   - Scattered Thoughts
