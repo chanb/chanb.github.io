@@ -15,3 +15,6 @@ My life-long research goal is to create autonomous agents that can adapt continu
 As a first step, I am developing this [repository](https://github.com/chanb/rl_sandbox_public) to implement (and reproduce) recent RL research papers. My goal with this work is to identify the problems with existing algorithms. Specifically, I am looking at these algorithms from the perspective of sample efficiency and exploration. I also investigate what "dirty tricks" we need in order to reproduce these papers. So far, this repository contains some model-free RL algorithms, IL algorithms, and hierarchical RL algorithms. I plan to add some model-based RL algorithms and offline RL algorithms.
 
 I am interested in collaborating on research projects so feel free to contact me via [**chanb@cs.toronto.edu**](mailto:chanb@cs.toronto.edu).
+
+## Update:
+- (2021/11/19) I will be teaching Introduction to Machine Learning (CSCC11) at University of Toronto Scarborough for winter 2022 semester. For any course-related conversations, please contact me via [**bryanpy.chan@mail.utoronto.ca**](mailto:bryanpy.chan@mail.utoronto.ca).
