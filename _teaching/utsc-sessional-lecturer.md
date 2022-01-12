@@ -8,5 +8,6 @@ venue: "University of Toronto"
 location: "Toronto, Canada"
 ---
 
+- Introduction to Machine Learning - CSCC11 (Winter 2022)
 - Introduction to Machine Learning - CSCC11 (Winter 2021)
 - Introduction to Machine Learning - CSCC11 (Fall 2020)
