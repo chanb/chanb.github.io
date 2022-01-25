@@ -44,6 +44,10 @@ How can you change your daily caloric intake?
 2. Fidget, stand, walk around throughout your day! Motion means work, which in turns burn more calories! You will lose more calories if you choose to stand over sitting, swinging your hands when you talk over standing still, etc. These small motions will eventually add up.
 3. Exercise, as in spending an hour or so doing cardio or resistance training. Cardio in general burns more calories than resistance training, but of course resistance training allows you to maintain or build muscles.
 
+### Losing Weight Too Fast
+At my current stage, I feel I am losing weight too quickly---it is often recommended that you lose 1% of your body weight per week.
+Losing weight too fast means you are likely to lose more muscle mass---furthermore, if you were really really obess, you may get loose skins!
+
 ## Rule 2: There Is No Such Thing as Diet
 A lot of people treat weight loss as a short-term thing---they opt in for doing some dramatic diets that "guarantee" success.
 Then once they go back to their normal meal plan, they gain the weight again (yikes!).
