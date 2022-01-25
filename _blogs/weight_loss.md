@@ -9,7 +9,7 @@ tags:
   - Scattered Thoughts
 ---
 
-This blog post will be about my weight loss journey which I started during COVID-19.
+This blog post will be about my weight-loss journey which I started during COVID-19.
 In general, I lost about 22kg over five months while, hopefully, losing as little muscle as possible during the process.
 This journey is still in progress and I still have a lot to learn---in fact, this is probably something I will be continuing for the remaining of my life.
 Nevertheless, I feel this experience would motivate other folks for their goals and dreams.
@@ -36,7 +36,7 @@ In general, you gain or lose weight based on your net caloric intake on average.
 Each person has a daily maintenance caloric intake that depends on their weight, amount of muscles, harmones, and more.
 But the rule is still the same, if you have a caloric surplus on average, then you will gain weight.
 On the other hand, a caloric deficit yields weight loss.
-As your weight loss goal, indeed you want to create a caloric deficit---it takes approximately 3,500 calories to burn one pound of fat.
+As your weight-loss goal, indeed you want to create a caloric deficit---it takes approximately 3,500 calories to burn one pound of fat.
 if you want to lose one pound per week, then generate 3,500 caloric deficit over seven days and you will hopefully see some results!
 
 How can you change your daily caloric intake?
@@ -80,7 +80,7 @@ Looking at the mean (or median) will give you a general sense of progression!
 Furthermore, this can help alleviate the negative psychological effect of that one single noisy sample.
 
 ## Rule 4: Walking Is Good Cardio
-A lot of weight loss program incorporates cardio---in particular, medium to high-intensity cardio such as jogging and sprinting.
+A lot of weight-loss program incorporates cardio---in particular, medium to high-intensity cardio such as jogging and sprinting.
 I am not in the position of determining whether they are good exercises, but I did not do any of those.
 Instead, I walked a lot---whether it was walking on the elliptical machine, walking on a treadmill in an incline, walking to a park or a lake, etc.
 I appreciate the low-intensity cardio as I do not really suffer from pain---in fact, I get to clear my mind and enjoy the view simultanously.
