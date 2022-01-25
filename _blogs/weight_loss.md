@@ -20,9 +20,9 @@ This is my progress over the last few months---I am pretty proud of myself :)
 
 As I mentioned in my previous blog post about developing habits, I was unhappy with my state, both physically and mentally.
 The former is clear, I was obess and being obess were not great---seats were tight, breaking things you stood on, clothes were not fitting---I can list more but hopefully the point is clear.
-The latter may be more subtle since it developed secretly. The physical factors really impaired my confident, essentially causing me to feel uneasy under my own skin.
+The latter may be more subtle since it developed secretly. The physical factors really impaired my confidence, essentially causing me to feel uneasy under my own skin.
 To this day, I still feel quite uneasy when I look into the mirror, but on the other hand I know my effort has paid off so far.
-It is just a metter of time before I shake off that feeling completely.
+It is just a matter of time before I shake off that feeling completely.
 The physical and mental problems did not build up in a short period of time---I had been obess since third grade, who knows how much of these small things added up, eventually impacting my well-being negatively.
 
 Throughout the obesity period, I did attempt to lose weight previously but failed miserably---at some point I stopped caring.
