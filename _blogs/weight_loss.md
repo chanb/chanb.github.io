@@ -80,7 +80,7 @@ Looking at the mean (or median) will give you a general sense of progression!
 Furthermore, this can help alleviate the negative psychological effect of that one single noisy sample.
 
 ## Rule 4: Walking Is Good Cardio
-A lot of weight-loss program incorporates cardio---in particular, medium to high-intensity cardio such as jogging and sprinting.
+A lot of weight-loss program incorporates cardio---in particular, medium-to-high-intensity cardio such as jogging and sprinting.
 I am not in the position of determining whether they are good exercises, but I did not do any of those.
 Instead, I walked a lot---whether it was walking on the elliptical machine, walking on a treadmill in an incline, walking to a park or a lake, etc.
 I appreciate the low-intensity cardio as I do not really suffer from pain---in fact, I get to clear my mind and enjoy the view simultanously.
