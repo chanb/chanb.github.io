@@ -1,8 +1,8 @@
 ---
 title: 'Scattered Thoughts: My Lessons Learned on Teaching'
-collection: blogs
+collection: personal_blogs
 date: 2021-10-24
-permalink: /blogs/2021/10/teaching_thoughts/
+permalink: /personal_blogs/2021/10/teaching_thoughts/
 tags:
   - Teaching
   - Scattered Thoughts

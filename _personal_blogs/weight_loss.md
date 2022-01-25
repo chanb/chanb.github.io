@@ -1,8 +1,8 @@
 ---
 title: 'Scattered Thoughts: Losing Weight'
-collection: blogs
+collection: personal_blogs
 date: 2022-01-24
-permalink: /blogs/2021/10/weight_loss/
+permalink: /personal_blogs/2021/10/weight_loss/
 tags:
   - Habits
   - Weight Loss
