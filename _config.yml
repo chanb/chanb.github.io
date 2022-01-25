@@ -172,7 +172,7 @@ kramdown:
 
 # Collections
 collections:
-  blogs:
+  personal_blogs:
     output: true
     permalink: /:collection/:path/
   teaching:
@@ -204,7 +204,7 @@ defaults:
       related: true
   - scope:
       path: ""
-      type: blogs
+      type: personal_blogs
     values:
       layout: single
       author_profile: true

@@ -6,12 +6,12 @@ author_profile: true
 ---
 
 {% include base_path %}
-{% include group-by-array collection=site.blogs field="tags" %}
+{% include group-by-array collection=site.personal_blogs field="tags" %}
 
 {% for tag in group_names %}
-  {% assign blogs = group_items[forloop.index0] %}
+  {% assign personal_blogs = group_items[forloop.index0] %}
   <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
-  {% for post in blogs %}
+  {% for post in personal_blogs %}
     {% include archive-single.html %}
   {% endfor %}
 {% endfor %}
