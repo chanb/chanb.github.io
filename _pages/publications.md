@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-[1] T. Ablett\*, __B. Chan\*__, and J. Kelly, "Learning from Guided Play: Improving Exploration in Adversarial Imitation Learning with Simple Auxiliary Tasks," in Robotics and Automation Letters (RA-L) with IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS’22) Option. (\* equal contribution)  
+[1] T. Ablett\*, __B. Chan\*__, and J. Kelly, "Learning from Guided Play: Improving Exploration in Adversarial Imitation Learning with Simple Auxiliary Tasks," in Robotics and Automation Letters (RA-L) with IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS’22) Option. (Submitted, \* equal contribution)  
 <img src="/images/pubs/loopback-toy-example.png" width="800"/>  
 <img src="/images/pubs/lfgp_all_tasks_plus_dac_v1_199999.png" width="800"/>  
 [Code](https://github.com/utiasSTARS/lfgp) | [Website](https://papers.starslab.ca/lfgp/)
