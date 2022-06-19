@@ -8,7 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-I am currently a reinforcement learning researcher at Kindred AI. Before this, I completed my MSc in Applied Computing and HBSc in Computer Science at the University of Toronto.
+I am an incoming Ph.D student at the University of Alberta in reinforcement learning, supervised by Prof. Dale Schuurmans.
+Before this, I was a reinforcement learning researcher at Kindred AI.
+I completed my MSc in Applied Computing and HBSc in Computer Science at the University of Toronto.
 
 My life-long research goal is to create autonomous agents that can adapt continually in real life. In particular, I am interested in developing an agent that can 1) understand the properties of the world from 2) minimal interactions with environment and from 3) observing other agents' behaviours. The more ambitious agent would be 4) curious about the world and explores to answer its own questions and have the ability to 5) build a repertoire of skills such that they can compose the skills to complete long horizon tasks. To achieve my goal, my research focuses on reinforcement learning (RL), imitation learning (IL), robotics, meta-learning, and continual learning.
 
@@ -17,4 +19,4 @@ As a first step, I am developing this [repository](https://github.com/chanb/rl_s
 I am interested in collaborating on research projects so feel free to contact me via [**chanb@cs.toronto.edu**](mailto:chanb@cs.toronto.edu).
 
 ## Update:
-- (2021/11/19) I will be teaching Introduction to Machine Learning (CSCC11) at University of Toronto Scarborough for winter 2022 semester. For any course-related conversations, please contact me via [**bryanpy.chan@mail.utoronto.ca**](mailto:bryanpy.chan@mail.utoronto.ca).
+- (2022/06/17) I will be joining [RLAI](http://rlai.ualberta.ca/) at the University of Alberta as a Ph.D student in reinforcement learning under Prof. Dale Schuurmans!
