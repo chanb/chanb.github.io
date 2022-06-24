@@ -16,7 +16,7 @@ My life-long research goal is to create autonomous agents that can adapt continu
 
 As a first step, I am developing this [repository](https://github.com/chanb/rl_sandbox_public) to implement (and reproduce) recent RL research papers. My goal with this work is to identify the problems with existing algorithms. Specifically, I am looking at these algorithms from the perspective of sample efficiency and exploration. I also investigate what "dirty tricks" we need in order to reproduce these papers. So far, this repository contains some model-free RL algorithms, IL algorithms, and hierarchical RL algorithms. I plan to add some model-based RL algorithms and offline RL algorithms.
 
-I am interested in collaborating on research projects so feel free to contact me via [**chanb@cs.toronto.edu**](mailto:chanb@cs.toronto.edu).
+I am interested in collaborating on research projects so feel free to contact me via [**bryan.chan@ualberta.ca**](mailto:bryan.chan@ualberta.ca).
 
 ## Update:
 - (2022/06/17) I will be joining [RLAI](http://rlai.ualberta.ca/) at the University of Alberta as a Ph.D student in reinforcement learning under Prof. Dale Schuurmans!
