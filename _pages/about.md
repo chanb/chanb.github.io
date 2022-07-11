@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am an incoming Ph.D student at the University of Alberta in reinforcement learning, supervised by Prof. Dale Schuurmans.
+I am an incoming Phstudent at the University of Alberta in reinforcement learning, supervised by Prof. Dale Schuurmans.
 Before this, I was a reinforcement learning researcher at Kindred AI.
 I completed my MSc in Applied Computing and HBSc in Computer Science at the University of Toronto.
 
@@ -19,4 +19,4 @@ As a first step, I am developing this [repository](https://github.com/chanb/rl_s
 I am interested in collaborating on research projects so feel free to contact me via [**bryan.chan@ualberta.ca**](mailto:bryan.chan@ualberta.ca).
 
 ## Update:
-- (2022/06/17) I will be joining [RLAI](http://rlai.ualberta.ca/) at the University of Alberta as a Ph.D student in reinforcement learning under Prof. Dale Schuurmans!
+- (2022/06/17) I will be joining [RLAI](http://rlai.ualberta.ca/) at the University of Alberta as a PhD student in reinforcement learning under Prof. Dale Schuurmans!
