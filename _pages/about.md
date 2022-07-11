@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am an incoming Phstudent at the University of Alberta in reinforcement learning, supervised by Prof. Dale Schuurmans.
+I am an incoming PhD student at the University of Alberta in reinforcement learning, supervised by Prof. Dale Schuurmans.
 Before this, I was a reinforcement learning researcher at Kindred AI.
 I completed my MSc in Applied Computing and HBSc in Computer Science at the University of Toronto.
 
