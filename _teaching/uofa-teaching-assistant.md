@@ -3,7 +3,7 @@ title: "Teaching Assistant"
 collection: teaching
 type: "Undergraduate/Graduate Courses"
 permalink: /teaching/uofa-teaching-assistant
-date: 
+date: ""
 venue: "University of Alberta"
 location: "Edmonton, Canada"
 ---
