@@ -8,7 +8,7 @@ venue: "University of Alberta"
 location: "Edmonton, Canada"
 ---
 
-- Topics in Reinforcement Learning I - CMPUT 655 (Fall 2023)
-- Introduction to Reinforcement Learning - CMPUT 365 (Fall 2023)
-- Introduction to Machine Learning - CMPUT 466/566 (Winter 2023, Winter 2024)
 - Algorithms I - CMPUT 204 (Fall 2022)
+- Introduction to Machine Learning - CMPUT 466/566 (Winter 2023, Winter 2024)
+- Introduction to Reinforcement Learning - CMPUT 365 (Fall 2023)
+- Topics in Reinforcement Learning I - CMPUT 655 (Fall 2023)
