@@ -251,7 +251,15 @@ defaults:
       path: ""
       type: talks
     values:
-      layout: talk
+      layout: single
+      author_profile: true
+      share: true
+  # _services
+  - scope:
+      path: ""
+      type: services
+    values:
+      layout: single
       author_profile: true
       share: true
 
