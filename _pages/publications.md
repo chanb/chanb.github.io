@@ -35,4 +35,4 @@ author_profile: true
 [Paper](https://arxiv.org/abs/2008.08157) | [Code](https://github.com/utiasSTARS/robust-latent-srl) | [Presentation](https://www.youtube.com/watch?v=tPLUqhobVzw&ab_channel=UTIASSTARSLab)  
 
 
-You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
+You can also find my articles on <u><a href="https://scholar.google.com/citations?user=Gy7DMdcAAAAJ">my Google Scholar profile</a>.</u>
