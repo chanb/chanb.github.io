@@ -3,7 +3,7 @@ title: "Sessional Lecturer"
 collection: teaching
 type: "Undergraduate Courses"
 permalink: /teaching/utsc-sessional-lecturer
-date: ""
+date: 2020-09-01
 venue: "University of Toronto"
 location: "Toronto, Canada"
 ---
