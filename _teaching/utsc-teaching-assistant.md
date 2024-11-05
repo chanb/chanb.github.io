@@ -3,7 +3,7 @@ title: "Teaching Assistant"
 collection: teaching
 type: "Undergraduate Courses"
 permalink: /teaching/utsc-teaching-assistant
-date: 2020-01-01
+date: 
 venue: "University of Toronto"
 location: "Toronto, Canada"
 ---
