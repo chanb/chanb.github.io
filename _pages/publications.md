@@ -18,7 +18,7 @@ author_profile: true
 <img src="/images/pubs/vpace-img.png" width="500"/>  
 [Paper](https://arxiv.org/abs/2407.03311) | [Code](https://github.com/utiasSTARS/vpace) | [Website](https://papers.starslab.ca/vpace/)
 
-[5] __B. Chan__, K. Pereida, and J. Bergstra, "A Statistical Guarantee for Representation Transfer in Multitask Imitation Learning," in NeurIPS Workshop on Robot Learning 2023.  
+[5] __B. Chan__, K. Pereida\*, and J. Bergstra\*, "A Statistical Guarantee for Representation Transfer in Multitask Imitation Learning," in NeurIPS Workshop on Robot Learning 2023. (\* equal advising)  
 [Paper](https://arxiv.org/abs/2311.01589) | [Code](https://github.com/chanb/mtil)
 
 [6] T. Ablett, __B. Chan__, and J. Kelly, "Learning from Guided Play: Improving Exploration in Adversarial Imitation Learning with Simple Auxiliary Tasks," in Robotics and Automation Letters (RA-L) 2022. 
