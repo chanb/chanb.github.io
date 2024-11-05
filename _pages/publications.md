@@ -15,7 +15,7 @@ author_profile: true
 [Paper](https://rlj.cs.umass.edu/2024/papers/Paper80.html) | [Code](https://github.com/aa14k/adaptive_time)
 
 [4] T. Ablett, __B. Chan__, and J. Kelly, "Efficient Imitation Without Demonstrations via Value-Penalized Auxiliary Control from Examples," in CoRL Workshop on Mastering Robot Manipulation in a World of Abundant Data 2024. 
-<img src="/images/pubs/vpace-img.png" width="800"/>  
+<img src="/images/pubs/vpace-img.png" width="500"/>  
 [Paper](https://arxiv.org/abs/2407.03311) | [Code](https://github.com/utiasSTARS/vpace) | [Website](https://papers.starslab.ca/vpace/)
 
 [5] __B. Chan__, K. Pereida, and J. Bergstra, "A Statistical Guarantee for Representation Transfer in Multitask Imitation Learning," in NeurIPS Workshop on Robot Learning 2023. 
