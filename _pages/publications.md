@@ -21,7 +21,7 @@ author_profile: true
 [5] __B. Chan__, K. Pereida\*, and J. Bergstra\*, "A Statistical Guarantee for Representation Transfer in Multitask Imitation Learning," in NeurIPS Workshop on Robot Learning 2023. (\* equal advising)  
 [Paper](https://arxiv.org/abs/2311.01589) | [Code](https://github.com/chanb/mtil)
 
-[6] T. Ablett, __B. Chan__, and J. Kelly, "Learning from Guided Play: Improving Exploration in Adversarial Imitation Learning with Simple Auxiliary Tasks," in Robotics and Automation Letters (RA-L) 2022, doi: 10.1109/LRA.2023.3236882. 
+[6] T. Ablett, __B. Chan__, and J. Kelly, "Learning from Guided Play: Improving Exploration in Adversarial Imitation Learning with Simple Auxiliary Tasks," in Robotics and Automation Letters (RA-L) 2023, doi: 10.1109/LRA.2023.3236882. 
 <img src="/images/pubs/loopback-toy-example.png" width="800"/>  
 <img src="/images/pubs/lfgp_all_tasks_plus_dac_v1_199999.png" width="800"/>  
 [Paper](https://arxiv.org/abs/2301.00051) | [Code](https://github.com/utiasSTARS/lfgp) | [Website](https://papers.starslab.ca/lfgp/)
