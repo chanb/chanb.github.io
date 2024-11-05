@@ -10,7 +10,8 @@ __Mentor__, University of Toronto MScAC Mentorship Program, 2023--2024
 
 __Reviewer__, Association for the Advancement of Artificial Intelligence (AAAI), 2025
 
-__Reviewer__, Conference on Neural Information Processing Systems  (NeurIPS), 2023--2024
+__Reviewer__, Conference on Neural Information Processing Systems (NeurIPS), 2023--2024  
+*Top Reviewer, 2023--2024*
 
 __Reviewer__, IEEE International Conference on Robotics and Automation (ICRA), 2025
 
