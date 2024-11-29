@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-[1] __B. Chan\*__, X. Chen\*, A. György, and D. Schuurmans, "Toward Understanding In-context vs. In-weight Learning," under submission 2024. (\* equal contribution)  
+[1] __B. Chan\*__, X. Chen\*, A. György, and D. Schuurmans, "Toward Understanding In-context vs. In-weight Learning," under review 2024. (\* equal contribution)  
 [Paper](https://arxiv.org/abs/2410.23042) | [Code](https://github.com/chanb/simple_icl)
 
 [2] __B. Chan__, A. Leung, and J. Bergstra, "Offline-to-online Reinforcement Learning for Image-based Grasping with Scarce Demonstrations," in CoRL Workshop on Mastering Robot Manipulation in a World of Abundant Data 2024.  
