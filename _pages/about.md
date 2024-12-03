@@ -18,5 +18,7 @@ I am interested in collaborating on research projects so feel free to contact me
 
 
 ### Updates
+
 Dec. 2, 2024: I will be teaching Artificial Intelligence (CSCD84) at the University of Toronto Scarborough as a sessional lecturer.
+
 Nov. 21, 2024: I gave a [talk](https://www.youtube.com/watch?v=gkybLhKc3EY&t=2651s&ab_channel=MontrealRobotics) at the Robotics and Embodied AI Lab (REAL), Mila, on how to do offline-to-online RL on real-life robotic grasping!
