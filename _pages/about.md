@@ -19,6 +19,6 @@ I am interested in collaborating on research projects so feel free to contact me
 
 ### Updates
 
-Dec. 2, 2024: I will be teaching Artificial Intelligence (CSCD84) at the University of Toronto Scarborough as a sessional lecturer. For students taking this course, please contact me via [**chanb@cs.toronto.edu**](mailto:chanb@cs.toronto.edu).
+Jan. 22, 2025: Our [paper](https://openreview.net/forum?id=aKJr5NnN8U) on understanding when in-context learning emerges has been accepted to ICLR 2025!
 
-Nov. 21, 2024: I gave a [talk](https://www.youtube.com/watch?v=gkybLhKc3EY&t=2651s&ab_channel=MontrealRobotics) at the Robotics and Embodied AI Lab (REAL), Mila, on how to do offline-to-online RL on real-life robotic grasping!
+Dec. 2, 2024: I will be teaching Artificial Intelligence (CSCD84) at the University of Toronto Scarborough as a sessional lecturer. For students taking this course, please contact me via [**chanb@cs.toronto.edu**](mailto:chanb@cs.toronto.edu).
