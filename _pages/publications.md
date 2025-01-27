@@ -11,7 +11,7 @@ author_profile: true
 [2] __B. Chan__, A. Leung, and J. Bergstra, "Offline-to-online Reinforcement Learning for Image-based Grasping with Scarce Demonstrations," in CoRL Workshop on Mastering Robot Manipulation in a World of Abundant Data 2024.  
 [Paper](https://arxiv.org/abs/2410.14957) | [Code](https://github.com/chanb/robomimic/tree/simplified_q) | [Talk](https://www.youtube.com/live/gkybLhKc3EY?si=-h-akFHJ8fgkth0z)
 
-[3] T. Ablett, __B. Chan__, and J. Kelly, "Efficient Imitation Without Demonstrations via Value-Penalized Auxiliary Control from Examples," in CoRL Workshop on Mastering Robot Manipulation in a World of Abundant Data 2024. 
+[3] T. Ablett, __B. Chan__, and J. Kelly, "Efficient Imitation Without Demonstrations via Value-Penalized Auxiliary Control from Examples," in IEEE International Conference on Robotics and Automation 2025. 
 <img src="/images/pubs/vpace-img.png" width="500"/>  
 [Paper](https://arxiv.org/abs/2407.03311) | [Code](https://github.com/utiasSTARS/vpace) | [Website](https://papers.starslab.ca/vpace/)
 
