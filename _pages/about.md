@@ -19,6 +19,8 @@ I am interested in collaborating on research projects so feel free to contact me
 
 ### Updates
 
+Jan. 27, 2025: Our [paper](https://papers.starslab.ca/vpace/) on hierarchical example-based control has been accepted to ICRA 2025!
+
 Jan. 22, 2025: Our [paper](https://openreview.net/forum?id=aKJr5NnN8U) on understanding when in-context learning emerges has been accepted to ICLR 2025!
 
 Dec. 2, 2024: I will be teaching Artificial Intelligence (CSCD84) at the University of Toronto Scarborough as a sessional lecturer. For students taking this course, please contact me via [**chanb@cs.toronto.edu**](mailto:chanb@cs.toronto.edu).
