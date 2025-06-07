@@ -8,4 +8,5 @@ venue: "University of Toronto"
 location: "Toronto, Canada"
 ---
 
+- Artificial Intelligence - CSCD84 (Winter 2025)
 - Introduction to Machine Learning - CSCC11 (Fall 2020, Winter 2021, Winter 2022)
