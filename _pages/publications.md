@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-F. Che, __B. Chan\*__, C. Ma and A. R. Mahmood "AVG-DICE: Stationary Distribution Correction by Regression," in ArXiv Preprint 2025.  
+F. Che, __B. Chan\*__, C. Ma and A. R. Mahmood "AVG-DICE: Stationary Distribution Correction by Regression," in Reinforcement Learning Conference (RLC) 2025.  
 [Paper](https://arxiv.org/abs/2503.02125) | [Code](https://github.com/FengdiC/Avg_OPE)
 
 __B. Chan\*__, X. Chen\*, A. György, and D. Schuurmans, "Toward Understanding In-context vs. In-weight Learning," in the Thirteenth International Conference on Learning Representations (ICLR) 2025. (\* equal contribution)  
