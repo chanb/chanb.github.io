@@ -14,8 +14,6 @@ My goal is to understand how to efficiently train and deploy scalable agents tha
 Before this, I was a researcher at Kindred AI (acquired by Ocado Technology) developing reinforcement-learning and imitation-learning methods for robotic manipulation.
 I completed my MSc in Applied Computing and HBSc in Computer Science at the University of Toronto.
 
-Please contact me via [**bryan.chan@ualberta.ca**](mailto:bryan.chan@ualberta.ca) for any conversations.
-
 
 ### Updates
 
