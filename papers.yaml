@@ -18,7 +18,6 @@ papers:
       - name: code
         href: https://github.com/FengdiC/Avg_OPE
     description: 
-    highlighted: false
     nogif: true
 
   - name: icl_vs_iwl
@@ -41,7 +40,6 @@ papers:
       - name: code
         href: https://github.com/chanb/icl_vs_iwl
     description: 
-    highlighted: true
     nogif: true
 
   - name: offline_to_online_grasping
@@ -63,7 +61,6 @@ papers:
       - name: talk
         href: https://www.youtube.com/live/gkybLhKc3EY?si=-h-akFHJ8fgkth0z
     description: 
-    highlighted: false
     nogif: true
 
   - name: vpace
@@ -86,7 +83,6 @@ papers:
       - name: website
         href: https://papers.starslab.ca/vpace/
     description: 
-    highlighted: true
     nogif: true
 
   - name: curse_of_horizon
@@ -114,7 +110,6 @@ papers:
       - name: code
         href: https://github.com/aa14k/adaptive_time
     description: 
-    highlighted: false
     nogif: true
 
   - name: mtil
@@ -134,7 +129,6 @@ papers:
       - name: code
         href: https://github.com/chanb/mtil
     description: 
-    highlighted: false
     nogif: true
 
   - name: lfgp_ral
@@ -156,7 +150,6 @@ papers:
       - name: website
         href: https://papers.starslab.ca/lfgp/
     description: 
-    highlighted: true
     nogif: true
 
   - name: heteroscedastic_uncertainty
@@ -181,5 +174,4 @@ papers:
       - name: presentation
         href: https://www.youtube.com/watch?v=tPLUqhobVzw&ab_channel=UTIASSTARSLab
     description: 
-    highlighted: false
     nogif: true

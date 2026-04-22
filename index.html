@@ -10,110 +10,7 @@
   <title>Bryan Chan. Personal Webpage</title>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-
-  <!-- Not sure what this is for, maybe the gif toggles? -->
-  <script type="text/javascript">
-     function visibility_on(id) {
-          var e = document.getElementById(id+"_text");
-          if(e.style.display == 'none')
-              e.style.display = 'block';
-          var e = document.getElementById(id+"_img");
-          if(e.style.display == 'none')
-              e.style.display = 'block';
-     }
-     function visibility_off(id) {
-          var e = document.getElementById(id+"_text");
-          if(e.style.display == 'block')
-              e.style.display = 'none';
-          var e = document.getElementById(id+"_img");
-          if(e.style.display == 'block')
-              e.style.display = 'none';
-     }
-     function toggle_visibility(id) {
-         var e = document.getElementById(id+"_text");
-         if(e.style.display == 'inline')
-            e.style.display = 'block';
-         else
-            e.style.display = 'inline';
-         var e = document.getElementById(id+"_img");
-         if(e.style.display == 'inline')
-            e.style.display = 'block';
-         else
-            e.style.display = 'inline';
-     }
-     function toggle_vis(id) {
-         var e = document.getElementById(id);
-         if (e.style.display == 'none')
-             e.style.display = 'inline';
-         else
-             e.style.display = 'none';
-     }
-  </script>
-  <!-- Gif toggles -->
-  <script>
-  function gif_start(image, gif) {
-    // Reset gif to play from the beginning
-    gif_elem = document.getElementById(gif)
-    var src = gif_elem.src;
-    gif_elem.src = ""
-    gif_elem.src = src
-    document.getElementById(image).style.opacity = "0";
-    // gif_elem.style.opacity = "1";
-  }
-  function gif_stop(image, gif) {
-    document.getElementById(image).style.opacity = "1";
-    // document.getElementById(gif).style.opacity = "0";
-  }
-  </script>
-
-  <!-- Selected publications toggle -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript">
-  function pubs_off_start() {
-    $('.hiddenPubs').hide();
-    var e = document.getElementById('sel_pub_button');
-    e.classList.add("toggled");
-    var e = document.getElementById('all_pub_button');
-    e.classList.remove("toggled");
-  }
-  function pubs_off() {
-    $('.hiddenPubs').slideUp();
-    var e = document.getElementById('sel_pub_button');
-    e.classList.add("toggled");
-    var e = document.getElementById('all_pub_button');
-    e.classList.remove("toggled");
-  }
-  function pubs_on() {
-    $('.hiddenPubs').slideDown();
-    var e = document.getElementById('all_pub_button');
-    e.classList.add("toggled");
-    var e = document.getElementById('sel_pub_button');
-    e.classList.remove("toggled");
-  };
-  </script>
-
-  <!-- Dynamic generation -->
-  <script src="https://unpkg.com/mustache@latest"></script>
-  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-  <script type="text/javascript" src="scripts/js-yaml.min.js"></script>
-  <script type="text/javascript">
-  function renderHello() {
-    var template = document.getElementById('template').innerHTML;
-    $.get("./papers.yaml").done(function(data) {
-      try {
-      papers = jsyaml.load(data)
-      var rendered = Handlebars.compile(template)(papers);
-      document.getElementById('mustache_target').innerHTML = rendered;
-      pubs_off_start()
-      }
-      catch(err) {
-      }
-    });
-  }
-  </script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 
 <body>
   <!-- Dark mode -->
@@ -158,26 +55,12 @@
 
     <div style="width:100%; text-align=left; margin-left:40;margin-top:20; ">
       <heading>Publications</heading>
-      (<a style="font-size:17px" id='sel_pub_button' href="javascript:pubs_off()">Highlighted</a> /
-      <a style="font-size:17px" id='all_pub_button' href="javascript:pubs_on()">All</a>)
     </div>
 
     <div id="mustache_target">Loading...</div>
     <script id="template" type="text/x-handlebars-template">
       {{#papers}}
-      <!-- <div style="width:100%;margin-left:0px;margin-right:0px;margin-top:10px;flex-wrap:wrap-reverse; " class="table-like {{#unless highlighted}}hiddenPubs{{/unless}}" onmouseleave="gif_stop('{{name}}_image', '{{name}}_gif')" onmouseenter="gif_start('{{name}}_image', '{{name}}_gif')"> -->
-      <div style="width:100%;margin-left:0px;margin-right:0px;margin-top:10px;flex-wrap:wrap-reverse; " class="table-like {{#unless highlighted}}hiddenPubs{{/unless}}">
-          <!-- <div class="zero" style="flex: 1 0 170px;margin-top:0px;margin-right:20px;max-width:270px"> -->
-          <!-- <div class="one"> -->
-          <!-- {{#unless nogif}} -->
-          <!-- <div class="two"><img id='{{name}}_gif' src='images/{{name}}_after.gif' class="paper_img"></div> -->
-          <!-- {{/unless}} -->
-          <!-- <img id='{{name}}_image' src='images/{{name}}_before.png' class="paper_img" style="z-index:-1"> -->
-          <!-- </div> -->
-          <!-- {{#unless nogif}} -->
-          <!-- <p style="text-align: center;margin-top:0.4em;margin-bottom:0em;color:Gray;"><i> Hover/tap to play the gif</i></p> -->
-          <!-- {{/unless}} -->
-        <!-- </div> -->
+      <div style="width:100%;margin-left:0px;margin-right:0px;margin-top:10px;flex-wrap:wrap-reverse; " class="table-like">
         <div style="flex: 10000 1 400px;margin-bottom:10px;" valign="top">
           <!-- TODO Think about centering this text - that looks quite good -->
           <p class="paper_title" style="margin-top:0em;"><a  href={{title.link}}><papertitle>{{title.name}}</papertitle></a></br>
