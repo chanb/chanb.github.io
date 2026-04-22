@@ -17,6 +17,9 @@ papers:
         href: https://arxiv.org/abs/2503.02125
       - name: code
         href: https://github.com/FengdiC/Avg_OPE
+    description: 
+    highlight: false
+    nogif: true
 
   - name: icl_vs_iwl
     title:
@@ -37,6 +40,9 @@ papers:
         href: https://arxiv.org/abs/2410.23042
       - name: code
         href: https://github.com/chanb/icl_vs_iwl
+    description: 
+    highlight: true
+    nogif: true
 
   - name: offline_to_online_grasping
     title:
@@ -56,6 +62,9 @@ papers:
         href: https://github.com/chanb/robomimic/tree/simplified_q
       - name: talk
         href: https://www.youtube.com/live/gkybLhKc3EY?si=-h-akFHJ8fgkth0z
+    description: 
+    highlight: false
+    nogif: true
 
   - name: vpace
     title:
@@ -76,6 +85,9 @@ papers:
         href: https://github.com/utiasSTARS/vpace
       - name: website
         href: https://papers.starslab.ca/vpace/
+    description: 
+    highlight: true
+    nogif: true
 
   - name: curse_of_horizon
     title:
@@ -101,6 +113,9 @@ papers:
         href: https://rlj.cs.umass.edu/2024/papers/Paper80.html
       - name: code
         href: https://github.com/aa14k/adaptive_time
+    description: 
+    highlight: false
+    nogif: true
 
   - name: mtil
     title:
@@ -118,6 +133,9 @@ papers:
         href: https://arxiv.org/abs/2311.01589
       - name: code
         href: https://github.com/chanb/mtil
+    description: 
+    highlight: false
+    nogif: true
 
   - name: lfgp_ral
     title:
@@ -137,6 +155,9 @@ papers:
         href: https://github.com/utiasSTARS/lfgp
       - name: website
         href: https://papers.starslab.ca/lfgp/
+    description: 
+    highlight: true
+    nogif: true
 
   - name: heteroscedastic_uncertainty
     title:
@@ -159,3 +180,6 @@ papers:
         href: https://github.com/utiasSTARS/robust-latent-srl
       - name: presentation
         href: https://www.youtube.com/watch?v=tPLUqhobVzw&ab_channel=UTIASSTARSLab
+    description: 
+    highlight: false
+    nogif: true
