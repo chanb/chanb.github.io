@@ -42,27 +42,6 @@ papers:
     description: 
     nogif: true
 
-  - name: offline_to_online_grasping
-    title:
-      link: https://arxiv.org/pdf/2410.14957
-      name: "Offline-to-online Reinforcement Learning for Image-based Grasping with Scarce Demonstrations"
-    authors:
-      - me: true
-      - name: Anson Leung
-      - name: James Bergstra
-    conference:
-      name: CoRL Workshop on Mastering Robot Manipulation in a World of Abundant Data
-      year: 2024
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/2410.14957
-      - name: code
-        href: https://github.com/chanb/robomimic/tree/simplified_q
-      - name: talk
-        href: https://www.youtube.com/live/gkybLhKc3EY?si=-h-akFHJ8fgkth0z
-    description: 
-    nogif: true
-
   - name: vpace
     title:
       link: https://arxiv.org/pdf/2407.03311
@@ -82,6 +61,27 @@ papers:
         href: https://github.com/utiasSTARS/vpace
       - name: website
         href: https://papers.starslab.ca/vpace/
+    description: 
+    nogif: true
+
+  - name: offline_to_online_grasping
+    title:
+      link: https://arxiv.org/pdf/2410.14957
+      name: "Offline-to-online Reinforcement Learning for Image-based Grasping with Scarce Demonstrations"
+    authors:
+      - me: true
+      - name: Anson Leung
+      - name: James Bergstra
+    conference:
+      name: CoRL Workshop on Mastering Robot Manipulation in a World of Abundant Data
+      year: 2024
+    links:
+      - name: arXiv
+        href: https://arxiv.org/abs/2410.14957
+      - name: code
+        href: https://github.com/chanb/robomimic/tree/simplified_q
+      - name: talk
+        href: https://www.youtube.com/live/gkybLhKc3EY?si=-h-akFHJ8fgkth0z
     description: 
     nogif: true
 
