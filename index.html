@@ -25,7 +25,6 @@
       papers = jsyaml.load(data)
       var rendered = Handlebars.compile(template)(papers);
       document.getElementById('mustache_target').innerHTML = rendered;
-      pubs_off_start()
       }
       catch(err) {
       }
