@@ -13,6 +13,29 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <body>
+  <!-- Dynamic generation -->
+  <script src="https://unpkg.com/mustache@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script type="text/javascript" src="scripts/js-yaml.min.js"></script>
+  <script type="text/javascript">
+  function renderHello() {
+    var template = document.getElementById('template').innerHTML;
+    $.get("./papers.yaml").done(function(data) {
+      try {
+      papers = jsyaml.load(data)
+      var rendered = Handlebars.compile(template)(papers);
+      document.getElementById('mustache_target').innerHTML = rendered;
+      pubs_off_start()
+      }
+      catch(err) {
+      }
+    });
+  }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
   <!-- Dark mode -->
   <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
   <script>
