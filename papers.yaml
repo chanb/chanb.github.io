@@ -3,7 +3,7 @@ papers:
   - name: avg_dice
     title:
       link: https://arxiv.org/pdf/2503.02125
-      name: AVG-DICE: Stationary Distribution Correction by Regression
+      name: "AVG-DICE: Stationary Distribution Correction by Regression"
     authors:
       - name: Fengdi Che
       - me: true
@@ -23,7 +23,7 @@ papers:
   - name: icl_vs_iwl
     title:
       link: https://arxiv.org/pdf/2410.23042
-      name: Toward Understanding In-context vs. In-weight Learning
+      name: "Toward Understanding In-context vs. In-weight Learning"
     authors:
       - me: true
         star: true
@@ -45,7 +45,7 @@ papers:
   - name: offline_to_online_grasping
     title:
       link: https://arxiv.org/pdf/2410.14957
-      name: Offline-to-online Reinforcement Learning for Image-based Grasping with Scarce Demonstrations
+      name: "Offline-to-online Reinforcement Learning for Image-based Grasping with Scarce Demonstrations"
     authors:
       - me: true
       - name: Anson Leung
@@ -66,7 +66,7 @@ papers:
   - name: vpace
     title:
       link: https://arxiv.org/pdf/2407.03311
-      name: Efficient Imitation Without Demonstrations via Value-Penalized Auxiliary Control from Examples
+      name: "Efficient Imitation Without Demonstrations via Value-Penalized Auxiliary Control from Examples"
     authors:
       - name: Trevor Ablett
       - me: true
@@ -88,7 +88,7 @@ papers:
   - name: curse_of_horizon
     title:
       link: https://rlj.cs.umass.edu/2024/papers/Paper80.html
-      name: Mitigating the Curse of Horizon in Monte-Carlo Returns
+      name: "Mitigating the Curse of Horizon in Monte-Carlo Returns"
     authors:
       - name: Alex Ayoub
         star: true
@@ -115,7 +115,7 @@ papers:
   - name: mtil
     title:
       link: https://arxiv.org/pdf/2311.01589
-      name: A Statistical Guarantee for Representation Transfer in Multitask Imitation Learning
+      name: "A Statistical Guarantee for Representation Transfer in Multitask Imitation Learning"
     authors:
       - me: true
       - name: Karime Pereida
@@ -134,7 +134,7 @@ papers:
   - name: lfgp_ral
     title:
       link: https://arxiv.org/pdf/2301.00051
-      name: Learning from Guided Play: Improving Exploration in Adversarial Imitation Learning with Simple Auxiliary Tasks
+      name: "Learning from Guided Play: Improving Exploration in Adversarial Imitation Learning with Simple Auxiliary Tasks"
     authors:
       - name: Trevor Ablett
       - me: true
@@ -155,7 +155,7 @@ papers:
   - name: heteroscedastic_uncertainty
     title:
       link: https://arxiv.org/pdf/2008.08157
-      name: Heteroscedastic Uncertainty for Robust Generative Latent Dynamics
+      name: "Heteroscedastic Uncertainty for Robust Generative Latent Dynamics"
     authors:
       - name: Oliver Limoyo
       - me: true
