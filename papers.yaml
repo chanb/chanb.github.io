@@ -1,468 +1,161 @@
 papers:
 
-  - name: qam
-    title: 
-      link: https://arxiv.org/pdf/2601.14234
-      name: Q-learning with Adjoint Matching
-    authors:
-      - me: true
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
-    conference:
-      name: International Conference on Learning Representations (ICLR)
-      year: 2026
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/2601.14234
-      - name: code
-        href: https://github.com/colinqiyangli/qam
-      - name: website
-        href: qam/index.html
-    highlighted: true
-    nogif: true
-
-  - name: dqc
-    title: 
-      link: https://arxiv.org/pdf/2512.10926
-      name: Decoupled Q-Chunking
-    authors:
-      - me: true
-      - name: Seohong Park
-        href: https://seohong.me/
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
-    conference:
-      name: International Conference on Learning Representations (ICLR)
-      year: 2026
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/2512.10926
-      - name: code
-        href: https://github.com/colinqiyangli/dqc
-      - name: website
-        href: dqc/index.html
-    highlighted: true
-    nogif: true
-
-  - name: expo
+  - name: avg_dice
     title:
-      link: https://arxiv.org/pdf/2507.07986
-      name: "EXPO: Stable Reinforcement Learning with Expressive Policies"
+      link: https://arxiv.org/pdf/2503.02125
+      name: AVG-DICE: Stationary Distribution Correction by Regression
     authors:
-      - name: Perry Dong
-        href: https://github.com/pd-perry
+      - name: Fengdi Che
       - me: true
-      - name: Dorsa Sadigh
-        href: https://dorsa.fyi/
-      - name: Chelsea Finn
-        href: https://ai.stanford.edu/~cbfinn/
+      - name: Chen Ma
+      - name: A. Rupam Mahmood
     conference:
-      name: International Conference on Learning Representations (ICLR)
-      year: 2026
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/2507.07986
-      - name: code
-        href: https://github.com/pd-perry/EXPO
-      - name: website
-        href: https://pd-perry.github.io/expo-site/
-    highlighted: false
-    nogif: true
-
-  - name: qc
-    title: 
-      link: https://arxiv.org/pdf/2507.07969
-      name: Reinforcement Learning with Action Chunking
-    authors:
-      - me: true
-      - name: Zhiyuan Zhou
-        href: https://zhouzypaul.github.io/
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
-    conference:
-      name: Conference on Neural Information Processing Systems (NeurIPS)
+      name: Reinforcement Learning Conference (RLC)
       year: 2025
     links:
       - name: arXiv
-        href: https://arxiv.org/abs/2507.07969
+        href: https://arxiv.org/abs/2503.02125
       - name: code
-        href: https://github.com/colinqiyangli/qc
-      - name: website
-        href: qc/index.html
-    highlighted: true
-    nogif: true
+        href: https://github.com/FengdiC/Avg_OPE
 
-  - name: fql
+  - name: icl_vs_iwl
     title:
-      link: https://arxiv.org/pdf/2502.02538
-      name: 'Flow Q-Learning'
+      link: https://arxiv.org/pdf/2410.23042
+      name: Toward Understanding In-context vs. In-weight Learning
     authors:
-      - name: Seohong Park
-        href: https://seohong.me/
-      - me: true
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
-    conference:
-      name: International Conference on Machine Learning (ICML)
-      year: 2025
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/2502.02538
-      - name: code
-        href: https://github.com/seohongpark/fql
-      - name: website
-        href: https://seohong.me/projects/fql/
-    description: 
-    highlighted: true
-    nogif: true
-
-  - name: supe
-    title:
-      link: https://arxiv.org/pdf/2410.18076.pdf
-      name: Leveraging Skills from Unlabeled Prior Data for Efficient Online Exploration
-    authors:
-      - name: Max Wilcoxson
-        star: true
-        href: https://scholar.google.com/citations?user=co22ajYAAAAJ&hl=en
       - me: true
         star: true
-      - name: Kevin Frans
-        href: https://kvfrans.com/
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
-    conference:
-      name: International Conference on Machine Learning (ICML)
-      year: 2025
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/2410.18076
-      - name: code
-        href: https://github.com/rail-berkeley/supe
-      - name: website
-        href: https://wilcoxsonm21.github.io/supe/
-    description: 
-    highlighted: true
-    nogif: true
-
-  - name: rldg
-    title:
-      link: https://arxiv.org/pdf/2412.09858
-      name: 'RLDG: Robotic Generalist Policy Distillation via Reinforcement Learning'
-    authors:
-      - name: Charles Xu
-        href: https://charlesxu0124.github.io/
-      - me: true
-      - name: Jianlan Luo
-        href: https://people.eecs.berkeley.edu/~jianlanluo/
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
-    conference:
-      name: Robotics Science and Systems (RSS)
-      year: 2025
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/2412.09858
-      - name: website
-        href: https://generalist-distillation.github.io/
-    description: 
-    highlighted: false
-    nogif: true
-  
-  - name: wsrl
-    title:
-      link: https://arxiv.org/pdf/2412.07762.pdf
-      name: Efficient Online Reinforcement Learning Fine-Tuning Need Not Retain Offline Data
-    authors:
-      - name: Zhiyuan Zhou
+      - name: Xinyi Chen
         star: true
-        href: https://zhouzypaul.github.io/
-      - name: Andy Peng
-        star: true
-        href: https://scholar.google.com/citations?user=rhqRH0cAAAAJ&hl=en
-      - me: true
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
-      - name: Aviral Kumar
-        href: https://aviralkumar2907.github.io/
+      - name: András György
+      - name: Dale Schuurmans
     conference:
       name: International Conference on Learning Representations (ICLR)
       year: 2025
     links:
       - name: arXiv
-        href: https://arxiv.org/abs/2412.07762
+        href: https://arxiv.org/abs/2410.23042
       - name: code
-        href: https://github.com/zhouzypaul/wsrl
-      - name: website
-        href: https://zhouzypaul.github.io/wsrl/
-    description: 
-    highlighted: false
-    nogif: true
-  
-  - name: hato
+        href: https://github.com/chanb/icl_vs_iwl
+
+  - name: offline_to_online_grasping
     title:
-      link: https://arxiv.org/pdf/2404.16823.pdf
-      name: Learning Visuotactile Skills with Two Multifingered Hands
+      link: https://arxiv.org/pdf/2410.14957
+      name: Offline-to-online Reinforcement Learning for Image-based Grasping with Scarce Demonstrations
     authors:
-      - name: Toru Lin
-        href: https://toruowo.github.io/
-      - name: Yu Zhang
-        star: true
       - me: true
-        star: true
-      - name: Haozhi Qi
-        star: true
-        href: https://haozhi.io/
-      - name: Brent Yi
-        href: https://brentyi.github.io/
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
-      - name: Jitendra Malik
-        href: https://people.eecs.berkeley.edu/~malik/
+      - name: Anson Leung
+      - name: James Bergstra
     conference:
-      name: International Conference on Robotics and Automation (ICRA)
+      name: CoRL Workshop on Mastering Robot Manipulation in a World of Abundant Data
+      year: 2024
+    links:
+      - name: arXiv
+        href: https://arxiv.org/abs/2410.14957
+      - name: code
+        href: https://github.com/chanb/robomimic/tree/simplified_q
+      - name: talk
+        href: https://www.youtube.com/live/gkybLhKc3EY?si=-h-akFHJ8fgkth0z
+
+  - name: vpace
+    title:
+      link: https://arxiv.org/pdf/2407.03311
+      name: Efficient Imitation Without Demonstrations via Value-Penalized Auxiliary Control from Examples
+    authors:
+      - name: Trevor Ablett
+      - me: true
+      - name: Jayce Haoran Wang
+      - name: Jonathan Kelly
+    conference:
+      name: IEEE International Conference on Robotics and Automation (ICRA)
       year: 2025
     links:
       - name: arXiv
-        href: http://arxiv.org/abs/2404.16823
+        href: https://arxiv.org/abs/2407.03311
       - name: code
-        href: https://github.com/toruowo/hato
+        href: https://github.com/utiasSTARS/vpace
       - name: website
-        href: https://toruowo.github.io/hato/
-    description: 
-    highlighted: false
-    nogif: true
+        href: https://papers.starslab.ca/vpace/
 
-  - name: explore
+  - name: curse_of_horizon
     title:
-      link: https://arxiv.org/pdf/2311.05067.pdf
-      name: Accelerating Exploration with Unlabeled Prior Data
+      link: https://rlj.cs.umass.edu/2024/papers/Paper80.html
+      name: Mitigating the Curse of Horizon in Monte-Carlo Returns
     authors:
+      - name: Alex Ayoub
+        star: true
+      - name: David Szepesvari
+        star: true
+      - name: Francesco Zanini
+        star: true
       - me: true
         star: true
-      - name: Jason Zhang
-        star: true
-        href: 
-      - name: Dibya Ghosh
-        href: https://dibyaghosh.com/
-      - name: Amy Zhang
-        href: https://amyzhang.github.io/
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
+      - name: Dhawal Gupta
+      - name: Dale Schuurmans
+      - name: Bruno Castro da Silva
     conference:
-      name: Conference on Neural Information Processing Systems (NeurIPS)
+      name: Reinforcement Learning Conference (RLC)
+      year: 2024
+    links:
+      - name: paper
+        href: https://rlj.cs.umass.edu/2024/papers/Paper80.html
+      - name: code
+        href: https://github.com/aa14k/adaptive_time
+
+  - name: mtil
+    title:
+      link: https://arxiv.org/pdf/2311.01589
+      name: A Statistical Guarantee for Representation Transfer in Multitask Imitation Learning
+    authors:
+      - me: true
+      - name: Karime Pereida
+      - name: James Bergstra
+    conference:
+      name: NeurIPS Workshop on Robot Learning
       year: 2023
     links:
       - name: arXiv
-        href: https://arxiv.org/abs/2311.05067
+        href: https://arxiv.org/abs/2311.01589
       - name: code
-        href: https://github.com/facebookresearch/ExPLORe
-      - name: tweet
-        href: https://x.com/qiyang_li/status/1724563278377238847?s=20
-    description: 
-    highlighted: true
-    nogif: true
+        href: https://github.com/chanb/mtil
 
-  - name: avtd
+  - name: lfgp_ral
     title:
-      link: https://arxiv.org/pdf/2304.10466.pdf
-      name: Efficient Deep Reinforcement Learning Requires Regulating Overfitting
+      link: https://arxiv.org/pdf/2301.00051
+      name: Learning from Guided Play: Improving Exploration in Adversarial Imitation Learning with Simple Auxiliary Tasks
     authors:
+      - name: Trevor Ablett
       - me: true
-      - name: Aviral Kumar
-        href: https://aviralkumar2907.github.io/
-      - name: Ilya Kostrikov
-        href: https://www.kostrikov.xyz/
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
+      - name: Jonathan Kelly
     conference:
-      name: International Conference on Learning Representations (ICLR)
+      name: Robotics and Automation Letters (RA-L)
       year: 2023
     links:
       - name: arXiv
-        href: https://arxiv.org/abs/2304.10466
-      - name: tweet
-        href: https://x.com/qiyang_li/status/1652340859793444864?s=20
-    description: 
-    highlighted: false
-    nogif: true
-
-  - name: rollin
-    title:
-      link: https://arxiv.org/pdf/2212.12809.pdf
-      name: Understanding the Complexity Gains of Single-Task RL with a Curriculum
-    authors:
-      - me: true
-        star: true
-      - name: Yuexiang Zhai
-        star: true
-        href: https://yx-s-z.github.io/
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
-    conference:
-      name: International Conference on Machine Learning (ICML)
-      year: 2023
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/2212.12809
-    description: 
-    highlighted: false
-    nogif: true
-
-  - name: adacat
-    title:
-      link: https://arxiv.org/pdf/2208.02246.pdf
-      name: "AdaCat: Adaptive Categorical Discretization for Autoregressive Models"
-    authors:
-      - me: true
-      - name: Ajay Jain
-        href: https://www.ajayjain.net/
-      - name: Pieter Abbeel
-        href: http://people.eecs.berkeley.edu/~pabbeel/
-    conference:
-      name: Uncertainty in Artificial Intelligence (UAI)
-      year: 2022
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/2208.02246
+        href: https://arxiv.org/abs/2301.00051
       - name: code
-        href: https://github.com/ColinQiyangLi/AdaCat
-      - name: lib
-        href: https://github.com/ColinQiyangLi/AdaCat-pip
-      - name: tweet
-        href: https://x.com/qiyang_li/status/1555250993058574336?s=20
+        href: https://github.com/utiasSTARS/lfgp
       - name: website
-        href: adacat/index.html
-    description: 
-    highlighted: false
-    nogif: false
+        href: https://papers.starslab.ca/lfgp/
 
-  - name: tto
+  - name: heteroscedastic_uncertainty
     title:
-      link: https://arxiv.org/pdf/2106.02039.pdf
-      name: "Offline Reinforcement Learning as One Big Sequence Modeling Problem"
+      link: https://arxiv.org/pdf/2008.08157
+      name: Heteroscedastic Uncertainty for Robust Generative Latent Dynamics
     authors:
-      - name: Michael Janner
-        href: https://jannerm.github.io/
+      - name: Oliver Limoyo
       - me: true
-      - name: Sergey Levine
-        href: https://people.eecs.berkeley.edu/~svlevine
+      - name: Filip Marić
+      - name: Brandon Wagstaff
+      - name: A. Rupam Mahmood
+      - name: Jonathan Kelly
     conference:
-      name: Conference on Neural Information Processing Systems (NeurIPS)
-      year: 2021
+      name: Robotics and Automation Letters (RA-L)
+      year: 2020
     links:
       - name: arXiv
-        href: https://arxiv.org/abs/2106.02039
+        href: https://arxiv.org/abs/2008.08157
       - name: code
-        href: https://github.com/JannerM/trajectory-transformer
-    description: 
-    highlighted: false
-    nogif: true
-
-  - name: bcop
-    title:
-      link: https://arxiv.org/pdf/1911.00937.pdf
-      name: Preventing Gradient Attenuation in Lipschitz Constrained Convolutional Networks
-    authors:
-      - me: true
-        star: true
-      - name: Saminul Haque
-        star: true
-        href: https://scholar.google.com/citations?user=D_D1DP8AAAAJ&hl=en
-      - name: Cem Anil
-        href: https://www.cs.toronto.edu/~anilcem/
-      - name: James Lucas
-        href: https://www.cs.toronto.edu/~jlucas/
-      - name: Roger Grosse
-        href: https://www.cs.toronto.edu/~rgrosse/
-      - name: "Jörn-Henrik Jacobsen"
-        href: https://jhjacobsen.github.io/
-    conference:
-      name: Neural Information Processing Systems (NeurIPS)
-      year: 2019
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/1911.00937
-    description: 
-    highlighted: true
-    nogif: true
-
-  - name: timbretron
-    title:
-      link: https://arxiv.org/pdf/1811.09620.pdf
-      name: "Timbretron: A WaveNet(CycleGAN(CQT(Audio))) Pipeline for Musical Timbre Transfer"
-    authors:
-      - name: Sicong Huang
-        href: https://www.cs.toronto.edu/~huang/
-      - me: true
-      - name: Cem Anil
-        href: https://www.cs.toronto.edu/~anilcem/
-      - name: Xuchan Bao
-        href: https://www.cs.toronto.edu/~jennybao/
-      - name: Sageev Oore
-        href: https://web.cs.dal.ca/~oore/
-      - name: Roger Grosse
-        href: https://www.cs.toronto.edu/~rgrosse/
-    conference:
-      name: International Conference on Learning Representations (ICLR)
-      year: 2019
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/1811.09620
-      - name: video (7 min)
-        href: https://youtu.be/YQAupr7JxNY?si=aXzKOfVJ6YCGL8aq
-    description: 
-    highlighted: false
-    nogif: true
-
-
-  - name: swarm
-    title:
-      link: https://arxiv.org/pdf/1709.06620.pdf
-      name: Learning of Coordination Policies for Robotic Swarms
-    authors:
-      - me: true
-      - name: Xintong Du
-        href: https://ca.linkedin.com/in/xintong-du-tracy
-      - name: Yizhou Huang
-        href: https://scholar.google.ca/citations?user=YDCsS5EAAAAJ&hl=en
-      - name: Quinlan Sykora
-        href: https://scholar.google.com/citations?user=QKNeRFsAAAAJ&hl=en
-      - name: Angela Schoellig
-        href: https://www.dynsyslab.org/prof-angela-schoellig/
-    conference:
-      name: Preprint
-      year: 2017
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/1709.06620
-    description:
-    highlighted: false
-    nogif: true
-
-  - name: dnnquad
-    title:
-      link: https://arxiv.org/pdf/1610.06283.pdf
-      name: Deep Neural Networks for Improved, Impromptu Trajectory Tracking of Quadrotors
-    authors:
-      - me: true
-      - name: Jingxing Qian
-        href: https://scholar.google.ca/citations?user=OZk7X80AAAAJ&hl=en
-      - name: Zining Zhu
-        href: https://ziningzhu.github.io/
-      - name: Xuchan Bao
-        href: https://www.cs.toronto.edu/~jennybao/
-      - name: Mohamed Helwa
-        href: https://scholar.google.ca/citations?user=ewqmB6sAAAAJ&hl=en
-      - name: Angela Schoellig
-        href: https://www.dynsyslab.org/prof-angela-schoellig/
-    conference:
-      name: International Conference on Robotics and Automation (ICRA)
-      year: 2017
-    links:
-      - name: arXiv
-        href: https://arxiv.org/abs/1610.06283
-      - name: video (1 min)
-        href: https://youtu.be/r1WnMUZy9-Y
-    description: 
-    highlighted: true
-    nogif: true
+        href: https://github.com/utiasSTARS/robust-latent-srl
+      - name: presentation
+        href: https://www.youtube.com/watch?v=tPLUqhobVzw&ab_channel=UTIASSTARSLab
