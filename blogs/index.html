@@ -20,7 +20,7 @@
   <script type="text/javascript">
   function renderHello() {
     var template = document.getElementById('template').innerHTML;
-    $.get("./papers.yaml").done(function(data) {
+    $.get("./blogs.yaml").done(function(data) {
       try {
       papers = jsyaml.load(data)
       var rendered = Handlebars.compile(template)(papers);
@@ -50,62 +50,22 @@
   <!-- body -->
   <div style="max-width:900; width:100%; margin:0 auto">
 
-      <!-- Intro & photo -->
-      <div class="table-like" style="width:100%; text-align=left;">
-        <div style="flex: 1 0 300px;margin-right:50px">
-          <p align="center">
-            <name>Bryan Chan</name>
-          </p>
-          <p>
-            I am a PhD student at the <a href="https://rlai.ualberta.ca/">Reinforcement Learning and Artificial Intelligence (RLAI) lab</a>, part of the computing science department at the University of Alberta, where I work on reinforcement learning. My PhD advisor is <a href="https://webdocs.cs.ualberta.ca/~dale/">Dale Schuurmans</a>.
-          </p>
-          <p>
-            Before this, I was a researcher at Kindred AI (acquired by Ocado Technology) developing reinforcement-learning and imitation-learning methods for robotic manipulation. I completed my MSc in Applied Computing and HBSc in Computer Science at the University of Toronto.
-          </p>
-          <p align=center>
-            <a href="https://scholar.google.com/citations?user=Gy7DMdcAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-            <a href="https://github.com/chanb">GitHub</a> &nbsp/&nbsp
-            <a href="materials/resume-latest.pdf">CV</a> &nbsp/&nbsp
-            <a href="mailto:bryan.chan@ualberta.ca">Email</a> &nbsp/&nbsp
-            <a href="https://www.linkedin.com/in/chanbpy/">LinkedIn</a> &nbsp/&nbsp
-            <a href="/blogs">Blogs</a>
-          </p>
-        </div>
-
-        <div style="flex: 0 0 310px;">
-          <img src="/images/profile.jpeg" style="width:100%">
-        </div>
-      </div>
-
     <div style="width:100%; text-align=left;margin-top:20; ">
-      <heading>Publications</heading>
+      <heading><a href="/">Home</a>/Blogs</heading>
     </div>
 
     <div id="mustache_target">Loading...</div>
     <script id="template" type="text/x-handlebars-template">
-      {{#papers}}
+      {{#blogs}}
       <div style="width:100%;margin-left:0px;margin-right:0px;margin-top:10px;flex-wrap:wrap-reverse; " class="table-like">
         <div style="flex: 10000 1 400px;margin-bottom:10px;" valign="top">
           <p class="paper_title" style="margin-top:0em;"><a  href={{title.link}}><papertitle>{{title.name}}</papertitle></a></br>
-          {{#authors}}
-          {{#if me}}
-            <strong>Bryan Chan</strong>{{#if star}}*{{/if}}{{#unless @last}}, {{/unless}}
-          {{else}}
-            <a class="black_link" href={{href}}>{{name}}</a>{{#if star}}*{{/if}}{{#unless @last}}, {{/unless}}
-          {{/if}}
-          {{/authors}}</br>
-
-          <font color="Gray"><i>{{{conference.name}}}</i>, {{{conference.year}}}</font><br>
-
-          {{#links}}
-          <a href={{href}}>{{name}}</a>{{#unless @last}} / {{/unless}}
-          {{/links}}</p>
-
-          <p style="margin-bottom:0em;">{{description}}</p>
         </div>
       </div>
-      {{/papers}}
+      {{/blogs}}
     </script>
+
+
     <script type="text/javascript">
     renderHello()
     </script>
