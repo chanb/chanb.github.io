@@ -113,12 +113,13 @@
             One fundamental question in computability theory is to ask whether we can have a TM that determines whether a given TM halts on a given input.
             It turns out this is <strong>undecidable</strong>, meaning that there is no such TM that can determine the answer to this question in general.
             That means generally there are questions for which we cannot find a computable function to solve it.
-            One consequence is that, <strong>even if we scale indefinitely (like we currently do with LLMs), we will never be able to answer undecidable problems.</strong>
+            Consequently <strong>even if we scale indefinitely (like we currently do with LLMs), we will never be able to answer undecidable problems.</strong>
             In fact, one can view "scaling indefinitely" as a way to create larger and larger tables that "memorizes" the input/output pairs.
           </p>
 
           <p>
-            We might have been too extreme by considering undecidable problems, let's restrict ourselves to decidable problems.
+            Undecidable problems are an extreme case.
+            Let's restrict ourselves to decidable problems.
             Even in this case, in practice we see that LLMs are equipped with some adaptive computation mechanisms such as chain-of-thought reasoning <a href="#reference_2">[2]</a> and recursive models <a href="#reference_3">[3]</a>.
             A recent work indicates that these adaptive computation methods help even for factual recalls <a href="#reference_4">[4]</a>!
             All of these works suggest adaptive computation helps, but how does it help in RL (and LLM)?
@@ -150,7 +151,8 @@
 
 
           <p>
-            Formally, a thought MDP is a tuple
+            Formally, we augment an MDP with thought states, thought actions, and a thought transition.
+            This gives a tuple
             \(
               \langle \mathcal{\bar{S}}, \mathcal{\bar{A}}, \bar{P}, \bar{r}, \mathcal{Z}, \mathcal{C}, P_z \rangle
             \)
@@ -198,8 +200,8 @@
       <div class="column">
         <div class="content has-text-justified">
           <p>
-            Our observation from computability theory is that the set of computable functions are strictly smaller than the set of all functions, this is analogous to comparing the sizes of natural numbers to real numbers.
-            Likewise, we can make similar observations in machine learning, where if the model class is the set of linear functions and the classification problem is non-linearly separable, we cannot hope to find an optimal predictor.
+            A classic result in computability theory shows us that the set of computable functions are strictly smaller than the set of all functions, this is analogous to comparing the sizes of natural numbers to real numbers.
+            Likewise, in machine learning, if the model class is the set of linear functions and the classification problem is non-linearly separable, we cannot hope to find an optimal predictor.
             In both cases, we can view the computable functions or the linear model class to be "resource bounded"---we cannot hope for these functions to return the desired output immediately.
             We claim that this is what <a href="#reference_5">[5]</a> misses when discussing "thinking" as part of the decision process.
           </p>
@@ -258,6 +260,7 @@
           <p>
             By imposing a "suitable" thought space, we can expand the policy expressiveness---creating new policies that can represent a state-to-action mapping that was not originally available in the standard MDP.
             Generally, once you find a suitable thought space, you can generate infinitely many more thought spaces that would work---in the XOR example I constructed at least three other thought spaces with different interpretations.
+            The important point is that the thought space increases policy expressiveness without increasing the capacity of the policy class itself, e.g., linear policy stays linear.
             Consequently, there are many new questions that we can be asking:
             (1) How one can ensure a thought space actually expands policy expressiveness?
             (2) What is the minimal construction of a thought space that uses the least number of thought states and thought actions?
@@ -293,7 +296,7 @@
 
           <p>
             Figure <a href="#fig_4">4</a> shows an instantiation of thought MDPs that use a transformer-induced thought space.
-            The thought space is constructed as follows:
+            We construct the thought space as follows:
             The thought transition is defined by a two-layered causal transformer \( \mathtt{TF} \), an environment state embedder \( E_\bar{s} \), and an action embedder \( E_c \).
             The initial thought state \( z_0 \) is a frozen vector that is randomly initialized.
             Upon taking a thought action \( a \in \mathcal{C} \), the thought transitions by performing \( z' = \mathtt{TF}(E_\bar{s}(\bar{s}), z, E_a(a)) \) while keeping the environment state fixed.
@@ -391,7 +394,7 @@
             One of the benefits here is that the thought space can be a completely different computational model, or even a (possibly uncomputable) oracle.
             For instance, one can formulate the thought space to be API calls in which the API can provide useful information for decision making <a href="#reference_8">[8]</a>.
             Likewise, one can formulate chain-of-thought reasoning <a href="#reference_2">[2]</a> as a way to increase computation.
-            This flexibility enables a decoupling between architectural design (the model) and process design (the "thought" space).
+            This flexibility decouples between architectural design (the model) and process design (the "thought" space).
           </p>
 
           <p>
@@ -403,7 +406,7 @@
           <p>
             Another point that we must accept is the fact that a fixed-size architecture without external memory is only a linearly-bounded TM, which is a more restricted computational model than a standard TM.
             One argument here is that we do not realistically have unbounded memory.
-            With the recent breakthrough by <a href="#reference_9">[9]</a> we can potentially use much less memory to find the correct solution (at the cost of increased runtime).
+            With the recent breakthrough by <a href="#reference_9">[9]</a> we can use substantially less memory to find the correct solution (at the cost of increased runtime).
           </p>
 
           <h4>Where does learning fit into this framework?</h4>
