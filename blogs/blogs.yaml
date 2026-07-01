@@ -1,5 +1,5 @@
-# blogs:
-#   - name: test
-#     title:
-#       name: test
-#       link: /blogs/test
+blogs:
+  - name: necessity_of_computation
+    title:
+      name: Necessity of computation in decision making
+      link: /blogs/necessity_of_computation

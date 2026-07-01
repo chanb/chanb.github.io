@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Sample-Efficient Reinforcement Learning with Action Chunking">
+  <meta name="keywords" content="Reinforcement Learning, Action Chunking, ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Necessity of computation in decision making</title>
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet"> -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.5/dist/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito" type='text/css'>
+  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="./static/css/index.css"> -->
+  <link rel="icon" href="https://example.com/path/to/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-body"  style="padding-bottom: 0;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Necessity of computation in decision making</h1>
+          <!-- <h2 class="title" style="font-size: large; color: grey;"></h2> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://chanb.github.io">Bryan Chan*</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://svmgrg.github.io">Shivam Garg</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://webdocs.cs.ualberta.ca/~dale/">Dale Schuurmans</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block" style="font-family:Nunito">University of Alberta</span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block" style="font-family:Nunito">* This blog is mostly Bryan's personal opinion, but the formalisms are developed with significant help from both Shivam and Dale.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns">
+      <div class="column">
+        <div class="content has-text-justified">
+          <p>
+          When we talk about a sequential decision making problem, we usually formulate the problem as a reinforcement learning (RL) problem where a policy (or an agent) interacting with an environment.
+          The environment is modeled as a Markov decision process (MDP)---the policy repeatedly observes a state, chooses an action, and receives a reward and a next state from the environment.
+          The goal here, is to find a policy that maximizes the cumulative sum of rewards.
+          </p>
+          <figure>
+            <img src="mdp.svg" alt="Standard MDP" style="width: 49%; max-width: 100%;">
+
+            <figcaption>
+              Figure 1. Markov decision process (MDP).
+            </figcaption>
+          </figure>
+          
+          <p>
+            But there is an assumption hiding in this picture---we often surmise that the policy can instantly produce the correct action.
+            In reality, <strong>every policy is implemented as a program running on a computer</strong>.
+            Programs require computation and computation is a limited resource.
+          </p>
+          
+      </div>
+    </div>
+  </section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">Policies Are Programs</h2>
+    <div class="columns">
+      <div class="column">
+        <div class="content has-text-justified">
+          <p>
+            A policy is simply a function mapping states to actions, but in order for them to be representable by some computers, this function has to be <strong>computable</strong>.
+            Effectively, you can consider computable functions as functions that can be represented by a Turing machine.
+            A Turing machine (TM) can be described by a finite set of symbols, a finite set of possible states, and a transition function.
+            Equipped with an unbounded tape with some input string written on it, a TM can perform computation by reading the symbols on the tape one at a time, potentially overwriting them with another symbol.
+            This TM also changes its state upon reading one symbol based on its transition function.
+            The computation halts once this TM transitions into a halting state.
+          </p>
+
+          <figure>
+            <img src="tm.svg" alt="Single-tape Turing machine" style="width: 49%; max-width: 100%;">
+
+            <figcaption>
+              Figure 1. A single-tape Turing machine <a href="#reference_1">[1]</a>.
+            </figcaption>
+          </figure>
+
+          <p>
+            One fundamental question in computability theory is to ask we can have a TM that determines whether a given TM halts on a given input.
+            It turns out this is <strong>undecidable</strong>, meaning that there is no such TM that can determine the answer to this question in general.
+            That means generally there are questions for which we cannot find a computable function to solve it.
+            One consequence is that, <strong>even if we scale indefinitely (like we currently do with LLMs), we will never be able to answer undecidable problems.</strong>
+            In fact, one can view "scaling indefinitely" as a way to create larger and larger table that "memorizes" the input/output pairs.
+          </p>
+
+          <p>
+            We might have been too extreme by considering undecidable problems, let's restrict ourselves to decidable problems.
+            Even in this case, in practice we see that LLMs are equipped with some adaptive computation mechanisms such chain-of-thought reasoning <a href="#reference_2">[2]</a> and recursive models <a href="#reference_3">[3]</a>.
+            In fact, recently <a href="#reference_4">[4]</a> indicates that these adaptive computation helps even for factual recalls!
+            All of these works suggest adaptive computation helps, but how does it help in RL (and LLM)?
+          </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">Thought MDPs to the rescue?</h2>
+    <div class="columns">
+      <div class="column">
+        <div class="content has-text-justified">
+          <p>
+            <a href="#reference_5">[5]</a> proposes thought MDP that aims to model "thinking" as part of the decision process.
+            A thought MDP is just an MDP equipped with a thought space, where the policy now has the option to take thought actions instead of environment actions---while the policy is "thinking" by taking thought actions the environment waits for the policy.
+            Intuitively, you can think of doing an exam where no one will suddenly change the question you're currently working on (of course when the time is up you can no longer think nor act).
+          </p>
+
+          <figure>
+            <img src="thought_mdp.svg" alt="Thought MDP" style="width: 100%; max-width: 100%;">
+
+            <figcaption>
+              Figure 2. A thought MDP with a Turing machine as a thought space.
+            </figcaption>
+          </figure>
+
+
+          <p>
+            Formally, a thought MDP is a tuple
+            \(
+              \langle \mathcal{\bar{S}}, \mathcal{\bar{A}}, \bar{P}, \bar{r}, \mathcal{Z}, \mathcal{C}, P_z \rangle
+            \)
+            where \( \mathcal{\bar{S}} \) is the environment state space, \( \mathcal{\bar{A}} \) is the environment action space, \( \bar{P} \) is the environment transition function, \( \bar{r} \) is the environment reward function, \( \mathcal{Z} \) is the thought state space, \( \mathcal{C} \) is the thought action space, and \( P_z \) is the thought transition function.
+            Notably, we assume that a policy can only take either one environment action or one thought action at a time, i.e., \( \mathcal{\bar{A}} \cap \mathcal{C} = \emptyset \).
+            We define \( \mathcal{S} = \mathcal{\bar{S}} \times \mathcal{Z} \) and \( \mathcal{A} = \mathcal{\bar{A}} \cup \mathcal{C} \) to be the (complete) state and action spaces.
+            The transition and the reward are respectively defined to be
+            \[
+            \begin{align*}
+                s' | s, a = \begin{cases}
+                                      s' \sim \bar{P}(\bar{s}' | \bar{s}, a) P_z (z' | \bar{s}, z, a) & \text{if } a \in \mathcal{\bar{A}} \\
+                                      s' \sim \delta(\bar{s}' = \bar{s}) P_z (z' | \bar{s}, z, a) & \text{if } a \in \mathcal{C}
+                                  \end{cases}, &&
+                r(s, a)       = \begin{cases}
+                                      \bar{r}(\bar{s}, a) & \text{if } a \in \mathcal{\bar{A}} \\
+                                      0           & \text{if } a \in \mathcal{C}
+                                  \end{cases}.
+            \end{align*}
+            \]
+            <a href="#reference_5">[5]</a> assumes that \( P_z \) is a deterministic transition function, the action is either an environment action or a thought action, and thought action yields a \( +0 \) reward and has no influence on the environment state.
+            In our case, for simplicity we set \( P_z(z' | \bar{s}, z, a) = \delta (z' = z_0) \) for \( a \in \mathcal{\bar{A}} \), meaning that whenever the policy takes an environment action the thought state resets.
+            This prevents, for example, spending all computation to plan out all possible futures in advance, which is interesting but is not the focus of this work.
+          </p>
+
+          <p>
+            One of the anticlimatic consequence of <a href="#reference_5">[5]</a> is the following proposition:
+            \[
+              \text{Any optimal policy } \pi^* \text{ for a thought MDP does not take thought actions: } \pi^*(s) \in \mathcal{\bar{A}}, \forall s \in \mathcal{S}.
+            \]
+            That means, the optimal policy always outputs the optimal environment action without any extra computation---this diverges from what people observe in practice, and also diverges from what computability and complexity theory indicate!
+            What is going on?
+          </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">Resource boundedness necessitates thought space</h2>
+    <div class="columns">
+      <div class="column">
+        <div class="content has-text-justified">
+          <p>
+            Our observation from computability theory is that the set of computable functions are strictly smaller than the set of all functions, this is analoguous to comparing the sizes of natural numbers to real numbers.
+            Likewise, we can make similar observations in machine learning, where if the model class is the set of linear functions and the classification problem is non-linearly separable, we cannot hope to find an optimal predictor.
+            In both cases, we can view the computable functions or the linear model class to be "resource bounded"---we cannot hope these functions to return the desired output immediately.
+            We claim that this is what <a href="#reference_5">[5]</a> misses when discussing "thinking" as part of the decision process.
+          </p>
+
+          <p>
+            Consider a MDP formulation of the XOR problem.
+            Here, the environment state space is \( \mathcal{\bar{S}} = \{0, 1\}^2 \times \{ \bar{s}_\text{abs} \} \) and the environment action space is \( \mathcal{\bar{A}} \).
+            The environment transition function is defined as \( \bar{P}(\bar{s}_\text{abs} | \bar{s}, \bar{a}) = 1 \) and the reward is defined as
+            \[
+            \bar{r}(\bar{s}, \bar{a}) = \begin{cases}
+              0 & \bar{s} = \bar{s}_\text{abs},\\
+              \mathbb{I}(\textsf{XOR}(x_1, x_2) = a) & \text{otherwise},
+            \end{cases}
+            \]
+            where we represent \( \bar{s} = (x_1, x_2) \).
+            Clearly, if we consider a linear policy class \( \Pi = \{ \theta \in \mathbb{R}^{2 \times 2} | \arg\max_{\bar{a} \in \mathcal{\bar{A}}} \theta(\bar{a}) \bar{s} \} \), then no policy \( \pi \in \Pi \) that can obtain a \( +1 \) reward for all states \( \bar{s} \in \{0, 1\}^2 \) as the XOR problem is non-linearly separable.
+          </p>
+
+          <p>
+            Indeed, one traditional approach is to add a feature that captures \( x_1 x_2 \) which makes the problem linearly separable in this feature space.
+            Our idea is similar in that we will use the thought space to add extra dimensionality, but the core difference is that <strong>the agent has to locate the suitable feature itself</strong>.
+          </p>
+
+          <p>
+            Formally, let's consider a thought space where the thought state space is \( \mathcal{Z} = \{ 0, 1 \}\), the thought action space is \( \mathcal{C} = \{ c \} \), and the thought transition is \( P_z( x_1, x_2, 1 | x_1, x_2, z , c) = 1 \).
+            Effectively, the thought transition sets the last bit to be \( 1 \) whenever a thought action is taken.
+            We set the initial thought state to always be $z_0 = 0$ so that it carries no environment-state-dependent information initially.
+            Figure <a href="#fig_3">3</a> shows the thought MDP induced by this thought space.
+          </p>
+
+          <figure id="fig_3">
+            <img src="thought_mdp_xor.svg" alt="Thought MDP for the XOR problem" style="width: 100%; max-width: 100%;">
+
+            <figcaption>
+              Figure 3. A thought MDP for the XOR problem that is linearly separable in the thought space.
+            </figcaption>
+          </figure>
+
+          <p>
+            The table in the middle of Figure <a href="#fig_3">3</a> shows a possible optimal policy mapping \( \pi^* \)---it remains to find a linear policy in the thought MDP that realizes \( \pi^* \).
+            Here is one possible parameter construction:
+            \[
+            \theta^* = \begin{bmatrix}
+                -10 & -10 & 30\\
+                -13.5 & -13.5 & 35\\
+                1 & 1 & 0
+            \end{bmatrix}
+            \]
+            Effectively, when \( z = 0 \), this policy singles out the \( {00} \) string by outputting \( a = 0\), and outputting \( a = c \) for other states.
+            Upon taking the thought action \( c \), the thought state becomes \( z = 1\).
+            This policy then singles out the \( {11} \) string by outputting \( a = 0\), and outputting \( a = 1 \) for other states.
+            Note that since the policy outputs the correct parity for \( s = [0, 0, 0] \), we can ignore the policy output for \( s = [0, 0, 1] \) as this state is never visited.
+            Simply speaking, the policy correctly predicts the parity of \( {00} \) immediately, and takes one thought step before correctly predicting the parity of \( {01} \), \( {10} \), and \( {11} \).
+          </p>
+
+          <p>
+            By imposing a suitable thought space, we can effectively expand the "policy expressiveness"---creating new policies that can represent a state-to-action mapping that was not originally available in the standard MDP.
+            In fact, there are infinitely many thought spaces that we can use to make the XOR problem linearly separable in the thought MDP.
+            There are many new questions we can be addressing:
+            (1) How one can ensure a thought space actually expands policy expressiveness?
+            (2) What is the minimal construction of a thought space that uses the least number of thought states and thought actions?
+            (3) What is the best construction of a thought space so that the optimal policy takes the least number of thought actions before taking the optimal environment action?
+          </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">A general thought space</h2>
+    <div class="columns">
+      <div class="column">
+        <div class="content has-text-justified">
+          <p>
+            We will now focus on (1): How one can ensure a thought space actually expands policy expressiveness?
+            Our intuition is that if the thought space can be as "general" as possible, then a policy has more chances to be more expressive.
+            The term "general" is fairly vague---here we use "universal computation" in computability theory to mean "general" as a universal computer can simulate any computable functions.
+            [6] shows that (extended) autoregressive decoding with transformers (or RNNs) can simulate universal TMs, meaning that these models are effective universal computers!
+            Thus, our way to construct a thought space is to use a causal transformer with (extended) autoregressive decoding---with finite state space we can remove the autoregressive decoding requirement and replace it with recursive modelling, e.g. TRM [3] or looped transformers.
+          </p>
+
+          <figure id="fig_4">
+            <img src="tf_thought_mdp.svg" alt="Thought MDP induced by a causal transformer" style="width: 100%; max-width: 100%;">
+
+            <figcaption>
+              Figure 4. A thought MDP induced by a frozen (causal) transformer.
+            </figcaption>
+          </figure>
+
+          <p>
+            Figure <a href="#fig_4">4</a> shows an instantiation of thought MDPs that use a transformer-induced thought space.
+            The thought space is constructed as follows:
+            The thought transition is defined by a two-layered causal transformer \( \mathtt{TF} \), an environment state embedder \( E_\bar{s} \), and an action embedder \( E_c \).
+            The initial thought state \( z_0 \) is a frozen vector that is randomly initialized.
+            Upon taking a thought action \( a \in \mathcal{C} \), the thought transitions by performing \( z' = \mathtt{TF}(E_\bar{s}(\bar{s}), z, E_a(a)) \) while keeping the environment state fixed.
+            Upon taking an environment action \( a \in \mathcal{\bar{A}} \), the environment transitions following \( \bar{P}(\bar{s}' | \bar{s}, a) \) and resets the thought state \( z' = z_0 \).
+          </p>
+
+          <h4>Toy experiment on FrozenLake</h4>
+          <p>
+            We now illustrate that this thought MDP is sufficiently general in the FrozenLake environment <a href="#reference_7">[7]</a>.
+            This environment requires moving the character from the top-left cell to the bottom-right cell.
+            Here, the environment state is a scalar \( \bar{s} \in \{0, \dots, 15 \} \) corresponding to the \(\bar{s}\)'th cell of the grid, counting from left to right then from top to bottom; and the environment action is \( \bar{a} \in \{ \mathsf{LEFT} (L), \mathsf{DOWN} (D), \mathsf{RIGHT} (R), \mathsf{UP} (U) \} \).
+            Upon reaching the bottom-right cell, the agent obtains a \( +1 \) reward and the episode terminates.
+            Upon reaching the puddle cells, the episode also terminates but without any penalty.
+            Otherwise, an episode is truncated after 30 steps---a thought action corresponds to one step in the environment, and we do not set any limit on how many thought actions the agent can take.
+          </p>
+          <figure id="fig_5">
+            <div style="display: flex; flex-direction: row; align-items: center; gap: 10px;">
+              <img src="frozen_lake.gif" alt="FrozenLake environment" style="width: 30%; max-width: 30%;">
+              <img src="frozen_lake_opt_paths.svg" alt="Optimal actions in FrozenLake" style="width: 65%; max-width: 65%;">
+            </div>
+
+            <figcaption>
+              Figure 5.
+              <strong>(Left)</strong> The FrozenLake environment <a href="#reference_7">[7]</a>.
+              <strong>(Right)</strong> Three possible optimal state-to-action mapping.
+            </figcaption>
+          </figure>
+
+          <p>
+            We first show that the optimal policy in this environment is not realizable by a linear policy.
+            There are three possible optimal paths as illustrated in Figure <a href="#fig_5">5</a>, right:
+            <ul>
+              <li>
+                \( \tau_1^* = \{ 0: R, 1: R, 2: D, 6: D, 10: D, 14: R \} \),
+              </li>
+              <li>
+                \( \tau_2^* = \{ 0: D, 4: D, 8: R, 9: R, 10: D, 14: R \} \), and
+              </li>
+              <li>
+                \( \tau_3^* = \{ 0: D, 4: D, 8: R, 9: D, 13: R, 14: R \} \).
+              </li>
+            </ul>
+            So long as a linear policy can map one of these sequences perfectly, it is optimal given that the initial state is always \( \bar{s}_0 = 0 \).
+            To do this, we cast this problem into a four-class classification problem, where given an optimal path \( \tau^* \), the objective is to minimize the 0-1 error, i.e., \( \min_{\pi \in \Pi} \ell(\pi, \tau^*) = \min_{\pi \in \Pi} \mathbb{E}_{(\bar{s}, \bar{a}) \in \tau^*} \left[ \mathbb{I} (\pi(\bar{s}) \neq \bar{a}) \right] \).
+            With a scalar state and two unique optimal actions, this is equivalent to placing two (linear) boundaries on a line so that every point with the same unique optimal action lies on the same side.
+            In this case, it is clear that there does not exist a single point such that they are separable regardless of the optimal paths, i.e., \( \min_{\pi \in \Pi} \ell(\pi, \tau^*) > 0 \) for \( \tau^* \in \{\tau_1^*, \tau_2^*, \tau_3^*\} \).
+          </p>
+
+          <figure id="fig_6">
+            <img src="frozen_lake-result.svg" alt="FrozenLake result" style="width: 100%; max-width: 100%;">
+
+            <figcaption>
+              Figure 6.
+              Experiment result on varying the number of thought actions in a transformer-induced thought FrozenLake environment.
+              Each line corresponds to the mean and shaded area corresponds to a \( 95\% \) confidence interval over five runs.
+              <strong>(Left)</strong> The total reward.
+              <strong>(Right)</strong> The fraction of thought actions taken.
+            </figcaption>
+          </figure>
+
+          <p>
+            We now experimentally show that linear policies can be optimal in our transformer-induced thought MDP.
+            We vary each agent by providing varying number of thought actions \( \lvert \mathcal{\bar{A}} \rvert = \{0, 1, 2, 4, 8 \} \).
+            The thought state space is \( \mathcal{Z} = \mathbb{R}^{8} \) and the thought transition is governed by a two-layered causal transformer with two attention heads.
+            Each policy is represented as a linear function followed by a softmax function and we train each agent using proximal policy optimization (PPO).
+            Each PPO iteration collects 50 trajectories and perform three full-batch updates---in total we train the agent for 1,000 iterations.
+            We also train a linear value function using Monte-Carlo rollouts and compute the generalized advantage estimation (GAE).
+            We use the Adam optimizer with learning rate \( \alpha = 0.01 \) to update the policy and value-function parameters.
+            For this experiment we are interested in evaluating the total reward and the proportional of thought actions in an episode.
+            For each agent we run five random seeds and report the mean and \( 95\% \) confidence interval in Figure <a href="#fig_6">6</a>.
+          </p>
+
+          <p>
+            As expected we can see that without any thought actions, the agent is unable to obtain near-optimal performance, whereas the agents with thought actions, except for when \( \lvert \mathcal{\bar{A}} \rvert = 8 \), can obtain significantly better performances.
+            However, we can see that as we increase \( \lvert \mathcal{\bar{A}} \rvert \) the proportion of thought action increases---in fact when \( \lvert \mathcal{\bar{A}} \rvert = 8 \) the agent just spends almost \( 80\% \) of the steps for thinking.
+            This is likely due to the increased difficulty of exploration---more thought actions means there could be exponentially many thought paths that may or may not lead to the optimal actions, in the worst case this becomes finding the needle in the haystack.
+            To draw an anthropomorphic analogy, this is similar to giving some a pen and a piece of paper---a scholar might be able to derive useful results while a toddler might not be able to even write with a pen.
+          </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">Conclusion</h2>
+    <div class="columns">
+      <div class="column">
+        <div class="content has-text-justified">
+          <h4>Process vs architectural scaling</h4>
+          <p>
+            An interpretation of this work is that rather than spending resources on scaling the size of a model that is commonly fixed during inference, we can instead spend resources on computational steps.
+            One of the benefits here is that the thought space can be a completely different computational model, or even an (possibly uncomputable) oracle.
+            Indeed, one can formulate the thought space to be API calls in which the API can provide useful information for decision making <a href="#reference_8">[8]</a>.
+            Likewise, one can formulate chain-of-thought reasoning <a href="#reference_2">[2]</a> as a way to increase computation.
+            This flexibility enables a decoupling between architectural design (the model) and process design (the "thought" space).
+          </p>
+
+          <p>
+            The pragmatic benefit is somewhat clear as well, scaling the depth and width of a model positively correlates with the training cost---of course, techniques such as mixed precision and gradient accumulation/checkpointing help but at some point we will require new training methodology for continued scaling.
+            The counter argument here is that the (potential) increased inference cost can be as expensive, if not more expensive.
+            Nevertheless, this is not to say that we should not scale the architecture---instead I am saying that it is important to think about how we are scaling the architecture.
+          </p>
+
+          <p>
+            Another point that we must accept is the fact that a fixed-sized architecture without external memory is only a linearly-bounded TM, which is a more restricted computational model than a standard TM.
+            One argument here is that we do not realistically have unbounded memory.
+            With the recent breakthrough by <a href="#reference_9">[9]</a> we can potentially use much less memory to find the correct solution (at the cost of increased runtime).
+          </p>
+
+          <h4>Where does learning fit into this framework?</h4>
+          <p>
+            In this work, we mostly motivated whether there is a fixed policy that can perform optimally with a thought space.
+            The learning aspect is somewhat an afterthought (note that in the MDP formulation we never talk about learning explicitly.) when I gave the experimental result.
+            One way to study the learning aspect is to treat the state provided to the policy here to be an "agent state" and model the learning process through the history of observations and actions <a href="#reference_12">[12]</a>, <a href="#reference_13">[13]</a>.
+            In this case we would have to talk about the computability and complexity of the learning process.
+            Nevertheless, even if we have an "agent state", it does not take away the fact that we have to spend computation to map the "agent state" to an environment action.
+          </p>
+
+          <h4>A small rant on anthropomorphic analogies</h4>
+          <p>
+            In the previous section I used the pen-and-paper analogy to describe some intuitions about how thought space might help.
+            I personally find this "anthropomorphization" to be potentially misleading for research.
+            On the one hand, these analogies can be inspiring.
+            For example, the formulation of RL is inspired by how animal learns <a href="#reference_10">[10]</a> and one of the first neural network was inspired by the brain <a href="#reference_11">[11]</a>.
+            On the other hand, these analogies might mislead how these models truly operate.
+            For example, <a href="#reference_5">[5]</a> describes this additional process as a "thought process" and <a href="#reference_2">[2]</a> calls autoregressively generating tokens as "chain-of-thought reasoning".
+            We can instead call "thought process" as an "intermediate computation process" or an "internal process", and nothing would have changed.
+            Indeed, the moment we use a TM to construct the "thought" space, do we say the TM is "thinking" when it is computing?
+            Is a chain of computation equivalent to reasoning?
+            If I must use anthropomorphic analogies, the work that illustrates "reasoning" helps with factual recall <a href="#reference_4">[4]</a> is closer to "memory anchoring" than "reasoning" (assuming that reasoning is about using a sequence of logical deductions to draw a conclusion).
+            My point is that we should be clear about where the analogy works and when it does not.
+          </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+@article{chan2026computationrl,
+  author = {Bryan Chan and Shivam Garg and Dale Schuurmans},
+  title  = {Necessity of computation in decision making},
+  year = {2026},
+  journal = {URL https://chanb.github.io/blogs/necessity_of_computation}
+}
+    </code></pre>
+    </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop">
+    <h2 class="title">Acknowledgement</h2>
+    <p>Bryan would like to thank Jiamin He and Rupam Mahmood for the discussions about possible interpretations of thought MDPs.</p>
+    </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop">
+    <h2 class="title">References</h2>
+    <p id="reference_1">[1] Nynexman4464. "Turing machine 2b.svg." Wikimedia Commons, Wikimedia Foundation (2008): https://commons.wikimedia.org/wiki/File:Turing_machine_2b.svg.</p>
+    <p id="reference_2">[2] Wei, Jason, et al. "Chain-of-thought prompting elicits reasoning in large language models." Advances in neural information processing systems 35 (2022).</p>
+    <p id="reference_3">[3] Jolicoeur-Martineau, Alexia. "Less is more: Recursive reasoning with tiny networks." arXiv preprint arXiv:2510.04871 (2025).</p>
+    <p id="reference_4">[4] Gekhman, Zorik, et al. "Thinking to recall: How reasoning unlocks parametric knowledge in llms." arXiv preprint arXiv:2603.09906 (2026).</p>
+    <p id="reference_5">[5] Hanna, Josiah, and Nicholas Corrado. "When Can Model-Free Reinforcement Learning be Enough for Thinking?." Advances in Neural Information Processing Systems 38 (2026).</p>
+    <p id="reference_6">[6] Lewandowski, Alex, Marlos C. Machado, and Dale Schuurmans. "Universal computation is intrinsic to language model decoding." arXiv preprint arXiv:2601.08061 (2026).</p>
+    <p id="reference_7">[7] Towers, Mark, et al. "Gymnasium: A standard interface for reinforcement learning environments." Advances in Neural Information Processing Systems 38 (2026).</p>
+    <p id="reference_8">[8] Qin, Yujia, et al. "Toolllm: Facilitating large language models to master 16000+ real-world apis." International Conference on Learning Representations. Vol. 2024. 2024.</p>
+    <p id="reference_9">[9] Williams, R. Ryan. "Simulating time with square-root space." Proceedings of the 57th annual ACM symposium on Theory of computing. 2025.</p>
+    <p id="reference_10">[10] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. Vol. 1. No. 1. Cambridge: MIT press, 1998.</p>
+    <p id="reference_11">[11] Rosenblatt, Frank. "The perceptron: a probabilistic model for information storage and organization in the brain." Psychological review 65.6 (1958): 386.</p>
+    <p id="reference_12">[12] Abel, David, et al. "On the convergence of bounded agents." arXiv preprint arXiv:2307.11044 (2023).</p>
+    <p id="reference_13">[13] Dong, Shi, Benjamin Van Roy, and Zhengyuan Zhou. "Simple agent, complex environment: Efficient reinforcement learning with agent states." Journal of Machine Learning Research 23.255 (2022): 1-54.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Template from <a href="https://colinqiyangli.github.io/">this</strong></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
