@@ -282,8 +282,8 @@
             We will now focus on (1): How one can ensure a thought space actually expands policy expressiveness?
             Our intuition is that if the thought space can be as "general" as possible, then a policy has more chances to be more expressive.
             The term "general" is fairly vague---here we use "universal computation" in computability theory to mean "general" as a universal computer can simulate any computable function.
-            [6] shows that (extended) autoregressive decoding with transformers (or RNNs) can simulate universal TMs, meaning that these models are effective universal computers!
-            Thus, our way to construct a thought space is to use a causal transformer with (extended) autoregressive decoding---with finite state space we can remove the autoregressive decoding requirement and replace it with recursive modelling, e.g. TRM [3] or looped transformers.
+            <a href="#reference_6">[6]</a> shows that (extended) autoregressive decoding with transformers (or RNNs) can simulate universal TMs, meaning that these models are effective universal computers!
+            Thus, our way to construct a thought space is to use a causal transformer with (extended) autoregressive decoding---with finite state space we can remove the autoregressive decoding requirement and replace it with recursive modelling, e.g. TRM <a href="#reference_3">[3]</a> or looped transformers <a href="#reference_7">[7]</a>.
           </p>
 
           <figure id="fig_4">
@@ -305,7 +305,7 @@
 
           <h4>Toy experiment on FrozenLake</h4>
           <p>
-            We now illustrate that this thought MDP is sufficiently general in the FrozenLake environment <a href="#reference_7">[7]</a>.
+            We now illustrate that this thought MDP is sufficiently general in the FrozenLake environment <a href="#reference_8">[8]</a>.
             This environment requires moving the character from the top-left cell to the bottom-right cell.
             Here, the environment state is a scalar \( \bar{s} \in \{0, \dots, 15 \} \) corresponding to the \(\bar{s}\)'th cell of the grid, counting from left to right then from top to bottom; and the environment action is \( \bar{a} \in \{ \mathsf{LEFT} (L), \mathsf{DOWN} (D), \mathsf{RIGHT} (R), \mathsf{UP} (U) \} \).
             Upon reaching the bottom-right cell, the agent obtains a \( +1 \) reward and the episode terminates.
@@ -320,7 +320,7 @@
 
             <figcaption>
               Figure 5.
-              <strong>(Left)</strong> The FrozenLake environment <a href="#reference_7">[7]</a>.
+              <strong>(Left)</strong> The FrozenLake environment <a href="#reference_8">[8]</a>.
               <strong>(Right)</strong> Three possible optimal state-to-action mapping.
             </figcaption>
           </figure>
@@ -392,7 +392,7 @@
           <p>
             An interpretation of this work is that rather than spending resources on scaling the size of a model that is commonly fixed during inference, we can instead spend resources on computational steps.
             One of the benefits here is that the thought space can be a completely different computational model, or even a (possibly uncomputable) oracle.
-            For instance, one can formulate the thought space to be API calls in which the API can provide useful information for decision making <a href="#reference_8">[8]</a>.
+            For instance, one can formulate the thought space to be API calls in which the API can provide useful information for decision making <a href="#reference_9">[9]</a>.
             Likewise, one can formulate chain-of-thought reasoning <a href="#reference_2">[2]</a> as a way to increase computation.
             This flexibility decouples between architectural design (the model) and process design (the "thought" space).
           </p>
@@ -406,14 +406,14 @@
           <p>
             Another point that we must accept is the fact that a fixed-size architecture without external memory is only a linearly-bounded TM, which is a more restricted computational model than a standard TM.
             One argument here is that we do not realistically have unbounded memory.
-            With the recent breakthrough by <a href="#reference_9">[9]</a> we can use substantially less memory to find the correct solution (at the cost of increased runtime).
+            With the recent breakthrough by <a href="#reference_10">[10]</a> we can use substantially less memory to find the correct solution (at the cost of increased runtime).
           </p>
 
           <h4>Where does learning fit into this framework?</h4>
           <p>
             In this work, we mostly motivated whether there is a fixed policy that can perform optimally with a thought space.
             The learning aspect is somewhat an afterthought (note that in the MDP formulation we never talk about learning explicitly.) when I gave the experimental result.
-            One way to study the learning aspect is to treat the state provided to the policy here to be an "agent state" and model the learning process through the history of observations and actions <a href="#reference_12">[12]</a>, <a href="#reference_13">[13]</a>.
+            One way to study the learning aspect is to treat the state provided to the policy here to be an "agent state" and model the learning process through the history of observations and actions <a href="#reference_11">[11]</a>, <a href="#reference_12">[12]</a>.
             In this case we would have to talk about the computability and complexity of the learning process.
             Nevertheless, even if we have an "agent state", it does not take away the fact that we have to spend computation to map the "agent state" to an environment action.
           </p>
@@ -423,7 +423,7 @@
             In the previous section I used the pen-and-paper analogy to describe some intuitions about how thought space might help.
             I personally find this anthropomorphism to be potentially misleading for research.
             On the one hand, these analogies can be inspiring.
-            For example, the formulation of RL is inspired by how animals learn <a href="#reference_10">[10]</a> and one of the first neural networks was inspired by the brain <a href="#reference_11">[11]</a>.
+            For example, the formulation of RL is inspired by how animals learn <a href="#reference_13">[13]</a> and one of the first neural networks was inspired by the brain <a href="#reference_14">[14]</a>.
             On the other hand, these analogies might mislead how these models truly operate.
             For example, <a href="#reference_5">[5]</a> describes this additional process as a "thought process" and <a href="#reference_2">[2]</a> calls autoregressively generated tokens as "chain-of-thought reasoning".
             We can instead call "thought process" as an "intermediate computation process" or an "internal process", and nothing would have changed.
@@ -469,13 +469,14 @@
     <p id="reference_4">[4] Gekhman, Zorik, et al. "Thinking to recall: How reasoning unlocks parametric knowledge in LLMs." arXiv preprint arXiv:2603.09906 (2026).</p>
     <p id="reference_5">[5] Hanna, Josiah, and Nicholas Corrado. "When Can Model-Free Reinforcement Learning be Enough for Thinking?." Advances in Neural Information Processing Systems 38 (2026).</p>
     <p id="reference_6">[6] Lewandowski, Alex, Marlos C. Machado, and Dale Schuurmans. "Universal computation is intrinsic to language model decoding." arXiv preprint arXiv:2601.08061 (2026).</p>
-    <p id="reference_7">[7] Towers, Mark, et al. "Gymnasium: A standard interface for reinforcement learning environments." Advances in Neural Information Processing Systems 38 (2026).</p>
-    <p id="reference_8">[8] Qin, Yujia, et al. "Toolllm: Facilitating large language models to master 16000+ real-world apis." International Conference on Learning Representations. Vol. 2024. 2024.</p>
-    <p id="reference_9">[9] Williams, R. Ryan. "Simulating time with square-root space." Proceedings of the 57th annual ACM symposium on Theory of computing. 2025.</p>
-    <p id="reference_10">[10] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. Vol. 1. No. 1. Cambridge: MIT press, 1998.</p>
-    <p id="reference_11">[11] Rosenblatt, Frank. "The perceptron: a probabilistic model for information storage and organization in the brain." Psychological review 65.6 (1958): 386.</p>
-    <p id="reference_12">[12] Abel, David, et al. "On the convergence of bounded agents." arXiv preprint arXiv:2307.11044 (2023).</p>
-    <p id="reference_13">[13] Dong, Shi, Benjamin Van Roy, and Zhengyuan Zhou. "Simple agent, complex environment: Efficient reinforcement learning with agent states." Journal of Machine Learning Research 23.255 (2022): 1-54.</p>
+    <p id="reference_7">[7] Giannou, Angeliki, et al. "Looped transformers as programmable computers." International Conference on Machine Learning. PMLR, 2023.</p>
+    <p id="reference_8">[8] Towers, Mark, et al. "Gymnasium: A standard interface for reinforcement learning environments." Advances in Neural Information Processing Systems 38 (2026).</p>
+    <p id="reference_9">[9] Qin, Yujia, et al. "Toolllm: Facilitating large language models to master 16000+ real-world apis." International Conference on Learning Representations. Vol. 2024. 2024.</p>
+    <p id="reference_10">[10] Williams, R. Ryan. "Simulating time with square-root space." Proceedings of the 57th annual ACM symposium on Theory of computing. 2025.</p>
+    <p id="reference_11">[11] Abel, David, et al. "On the convergence of bounded agents." arXiv preprint arXiv:2307.11044 (2023).</p>
+    <p id="reference_12">[12] Dong, Shi, Benjamin Van Roy, and Zhengyuan Zhou. "Simple agent, complex environment: Efficient reinforcement learning with agent states." Journal of Machine Learning Research 23.255 (2022): 1-54.</p>
+    <p id="reference_13">[13] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. Vol. 1. No. 1. Cambridge: MIT press, 1998.</p>
+    <p id="reference_14">[14] Rosenblatt, Frank. "The perceptron: a probabilistic model for information storage and organization in the brain." Psychological review 65.6 (1958): 386.</p>
   </div>
 </section>
 
