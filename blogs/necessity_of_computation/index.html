@@ -201,14 +201,15 @@
         <div class="content has-text-justified">
           <p>
             A classic result in computability theory shows us that the set of computable functions are strictly smaller than the set of all functions, this is analogous to comparing the sizes of natural numbers to real numbers.
+            In complexity theory, the time-hierarchy theorem indicates that there are problems that necessarily require more compute than some other problems.
             Likewise, in machine learning, if the model class is the set of linear functions and the classification problem is non-linearly separable, we cannot hope to find an optimal predictor.
-            In both cases, we can view the computable functions or the linear model class to be "resource bounded"---we cannot hope for these functions to return the desired output immediately (if ever).
+            In all cases, we can view the computable functions and the linear model class to be "resource bounded"---we cannot hope for these functions to return the desired output immediately (if ever).
             We claim that this is what <a href="#reference_5">[5]</a> misses when discussing "thinking" as part of the decision process.
           </p>
 
           <p>
             Consider a MDP formulation of the XOR problem.
-            Here, the environment state space is \( \mathcal{\bar{S}} = \{0, 1\}^2 \times \{ \bar{s}_\text{abs} \} \) and the environment action space is \( \mathcal{\bar{A}} \).
+            Here, the environment state space is \( \mathcal{\bar{S}} = \{0, 1\}^2 \cup \{ \bar{s}_\text{abs} \} \) and the environment action space is \( \mathcal{\bar{A}} \).
             The environment transition function is defined as \( \bar{P}(\bar{s}_\text{abs} | \bar{s}, \bar{a}) = 1 \) and the reward is defined as
             \[
             \bar{r}(\bar{s}, \bar{a}) = \begin{cases}
