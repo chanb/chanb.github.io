@@ -298,6 +298,7 @@
             Figure <a href="#fig_4">4</a> shows an instantiation of thought MDPs that use a transformer-induced thought space.
             We construct the thought space as follows:
             The thought transition is defined by a two-layered causal transformer \( \mathtt{TF} \), an environment state embedder \( E_\bar{s} \), and an action embedder \( E_c \).
+            All of \( \mathtt{TF} \), \( E_\bar{s} \), and \( E_c \) are randomly initialized and have the parameters fixed, i.e., no learning.
             The initial thought state \( z_0 \) is a frozen vector that is randomly initialized.
             Upon taking a thought action \( a \in \mathcal{C} \), the thought transitions by performing \( z' = \mathtt{TF}(E_\bar{s}(\bar{s}), z, E_a(a)) \) while keeping the environment state fixed.
             Upon taking an environment action \( a \in \mathcal{\bar{A}} \), the environment transitions following \( \bar{P}(\bar{s}' | \bar{s}, a) \) and resets the thought state \( z' = z_0 \).
