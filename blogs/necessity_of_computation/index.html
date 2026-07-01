@@ -94,7 +94,7 @@
         <div class="content has-text-justified">
           <p>
             A policy is simply a function mapping states to actions, but in order for them to be representable by some computers, this function has to be <strong>computable</strong>.
-            Effectively, you can consider computable functions as functions that can be represented by a Turing machine.
+            You can consider computable functions as functions that can be represented by a Turing machine.
             A Turing machine (TM) can be described by a finite set of symbols, a finite set of possible states, and a transition function.
             Equipped with an unbounded tape with some input string written on it, a TM can perform computation by reading the symbols on the tape one at a time, potentially overwriting them with another symbol.
             This TM also changes its state upon reading one symbol based on its transition function.
@@ -120,7 +120,7 @@
           <p>
             We might have been too extreme by considering undecidable problems, let's restrict ourselves to decidable problems.
             Even in this case, in practice we see that LLMs are equipped with some adaptive computation mechanisms such as chain-of-thought reasoning <a href="#reference_2">[2]</a> and recursive models <a href="#reference_3">[3]</a>.
-            In fact, recently <a href="#reference_4">[4]</a> indicates that these adaptive computation methods help even for factual recalls!
+            A recent work indicates that these adaptive computation methods help even for factual recalls <a href="#reference_4">[4]</a>!
             All of these works suggest adaptive computation helps, but how does it help in RL (and LLM)?
           </p>
       </div>
@@ -219,13 +219,13 @@
           </p>
 
           <p>
-            Indeed, one traditional approach is to add a feature that captures \( x_1 x_2 \) which makes the problem linearly separable in this feature space.
+            One traditional approach is to add a feature that captures \( x_1 x_2 \) which makes the problem linearly separable in this feature space.
             Our idea is similar in that we will use the thought space to add extra dimensionality, but the core difference is that <strong>the agent has to locate an appropriate feature itself</strong>.
           </p>
 
           <p>
             Formally, let's consider a thought space where the thought state space is \( \mathcal{Z} = \{ 0, 1 \}\), the thought action space is \( \mathcal{C} = \{ c \} \), and the thought transition is \( P_z( x_1, x_2, 1 | x_1, x_2, z , c) = 1 \).
-            Effectively, the thought transition sets the last bit to be \( 1 \) whenever a thought action is taken.
+            Notably, the thought transition sets the last bit to be \( 1 \) whenever a thought action is taken.
             We set the initial thought state to always be $z_0 = 0$ so that it carries no environment-state-dependent information initially.
             Figure <a href="#fig_3">3</a> shows the thought MDP induced by this thought space.
           </p>
@@ -248,7 +248,7 @@
                 1 & 1 & 0
             \end{bmatrix}
             \]
-            Effectively, when \( z = 0 \), this policy singles out the \( {00} \) string by outputting \( a = 0\), and outputting \( a = c \) for other states.
+            When \( z = 0 \), this policy singles out the \( {00} \) string by outputting \( a = 0\), and outputting \( a = c \) for other states.
             Upon taking the thought action \( c \), the thought state becomes \( z = 1\).
             This policy then singles out the \( {11} \) string by outputting \( a = 0\), and outputting \( a = 1 \) for other states.
             Note that since the policy outputs the correct parity for \( s = [0, 0, 0] \), we can ignore the policy output for \( s = [0, 0, 1] \) as this state is never visited.
@@ -256,9 +256,9 @@
           </p>
 
           <p>
-            By imposing a suitable thought space, we can effectively expand the "policy expressiveness"---creating new policies that can represent a state-to-action mapping that was not originally available in the standard MDP.
-            In fact, there are infinitely many thought spaces that we can use to make the XOR problem linearly separable in the thought MDP.
-            There are many new questions we can be addressing:
+            By imposing a "suitable" thought space, we can expand the policy expressiveness---creating new policies that can represent a state-to-action mapping that was not originally available in the standard MDP.
+            Generally, once you find a suitable thought space, you can generate infinitely many more thought spaces that would work---in the XOR example I constructed at least three other thought spaces with different interpretations.
+            Consequently, there are many new questions that we can be asking:
             (1) How one can ensure a thought space actually expands policy expressiveness?
             (2) What is the minimal construction of a thought space that uses the least number of thought states and thought actions?
             (3) What is the best construction of a thought space so that the optimal policy takes the least number of thought actions before taking the optimal environment action?
@@ -369,7 +369,7 @@
 
           <p>
             As expected we can see that without any thought actions, the agent is unable to obtain near-optimal performance, whereas the agents with thought actions, except for when \( \lvert \mathcal{\bar{A}} \rvert = 8 \), can obtain significantly better performance.
-            However, we can see that as we increase \( \lvert \mathcal{\bar{A}} \rvert \) the proportion of thought action increases---in fact when \( \lvert \mathcal{\bar{A}} \rvert = 8 \) the agent just spends almost \( 80\% \) of the steps for thinking.
+            However, we can see that as we increase \( \lvert \mathcal{\bar{A}} \rvert \) the proportion of thought action increases---when \( \lvert \mathcal{\bar{A}} \rvert = 8 \) the agent just spends almost \( 80\% \) of the steps for thinking.
             This is likely due to the increased difficulty of exploration---including more thought actions means there could be exponentially many thought paths that may or may not lead to the optimal actions, in the worst case this becomes finding the needle in the haystack.
             To draw an anthropomorphic analogy, this is similar to giving someone a pen and a piece of paper---a scholar might be able to derive useful results while a toddler might not be able to even write with a pen.
           </p>
@@ -389,7 +389,7 @@
           <p>
             An interpretation of this work is that rather than spending resources on scaling the size of a model that is commonly fixed during inference, we can instead spend resources on computational steps.
             One of the benefits here is that the thought space can be a completely different computational model, or even a (possibly uncomputable) oracle.
-            Indeed, one can formulate the thought space to be API calls in which the API can provide useful information for decision making <a href="#reference_8">[8]</a>.
+            For instance, one can formulate the thought space to be API calls in which the API can provide useful information for decision making <a href="#reference_8">[8]</a>.
             Likewise, one can formulate chain-of-thought reasoning <a href="#reference_2">[2]</a> as a way to increase computation.
             This flexibility enables a decoupling between architectural design (the model) and process design (the "thought" space).
           </p>
