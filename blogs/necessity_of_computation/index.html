@@ -63,9 +63,9 @@
       <div class="column">
         <div class="content has-text-justified">
           <p>
-          When we talk about a sequential decision making problem, we usually formulate the problem as a reinforcement learning (RL) problem where a policy (or an agent) interacting with an environment.
+          When we talk about a sequential decision making problem, we usually formulate the problem as a reinforcement learning (RL) problem where a policy (or an agent) interacts with an environment.
           The environment is modeled as a Markov decision process (MDP)---the policy repeatedly observes a state, chooses an action, and receives a reward and a next state from the environment.
-          The goal here, is to find a policy that maximizes the cumulative sum of rewards.
+          The goal here is to find a policy that maximizes the cumulative sum of rewards.
           </p>
           <figure>
             <img src="mdp.svg" alt="Standard MDP" style="width: 49%; max-width: 100%;">
@@ -110,17 +110,17 @@
           </figure>
 
           <p>
-            One fundamental question in computability theory is to ask we can have a TM that determines whether a given TM halts on a given input.
+            One fundamental question in computability theory is to ask whether we can have a TM that determines whether a given TM halts on a given input.
             It turns out this is <strong>undecidable</strong>, meaning that there is no such TM that can determine the answer to this question in general.
             That means generally there are questions for which we cannot find a computable function to solve it.
             One consequence is that, <strong>even if we scale indefinitely (like we currently do with LLMs), we will never be able to answer undecidable problems.</strong>
-            In fact, one can view "scaling indefinitely" as a way to create larger and larger table that "memorizes" the input/output pairs.
+            In fact, one can view "scaling indefinitely" as a way to create larger and larger tables that "memorizes" the input/output pairs.
           </p>
 
           <p>
             We might have been too extreme by considering undecidable problems, let's restrict ourselves to decidable problems.
-            Even in this case, in practice we see that LLMs are equipped with some adaptive computation mechanisms such chain-of-thought reasoning <a href="#reference_2">[2]</a> and recursive models <a href="#reference_3">[3]</a>.
-            In fact, recently <a href="#reference_4">[4]</a> indicates that these adaptive computation helps even for factual recalls!
+            Even in this case, in practice we see that LLMs are equipped with some adaptive computation mechanisms such as chain-of-thought reasoning <a href="#reference_2">[2]</a> and recursive models <a href="#reference_3">[3]</a>.
+            In fact, recently <a href="#reference_4">[4]</a> indicates that these adaptive computation methods help even for factual recalls!
             All of these works suggest adaptive computation helps, but how does it help in RL (and LLM)?
           </p>
       </div>
@@ -136,7 +136,7 @@
         <div class="content has-text-justified">
           <p>
             <a href="#reference_5">[5]</a> proposes thought MDP that aims to model "thinking" as part of the decision process.
-            A thought MDP is just an MDP equipped with a thought space, where the policy now has the option to take thought actions instead of environment actions---while the policy is "thinking" by taking thought actions the environment waits for the policy.
+            A thought MDP is just an MDP equipped with an additional thought space, where the policy now has the option to take thought actions instead of environment actions---while the policy is "thinking" by taking thought actions, the environment waits for the policy.
             Intuitively, you can think of doing an exam where no one will suddenly change the question you're currently working on (of course when the time is up you can no longer think nor act).
           </p>
 
@@ -170,13 +170,16 @@
                                   \end{cases}.
             \end{align*}
             \]
+          </p>
+
+          <p>
             <a href="#reference_5">[5]</a> assumes that \( P_z \) is a deterministic transition function, the action is either an environment action or a thought action, and thought action yields a \( +0 \) reward and has no influence on the environment state.
             In our case, for simplicity we set \( P_z(z' | \bar{s}, z, a) = \delta (z' = z_0) \) for \( a \in \mathcal{\bar{A}} \), meaning that whenever the policy takes an environment action the thought state resets.
             This prevents, for example, spending all computation to plan out all possible futures in advance, which is interesting but is not the focus of this work.
           </p>
 
           <p>
-            One of the anticlimatic consequence of <a href="#reference_5">[5]</a> is the following proposition:
+            One of the anticlimactic consequences of <a href="#reference_5">[5]</a> is the following proposition:
             \[
               \text{Any optimal policy } \pi^* \text{ for a thought MDP does not take thought actions: } \pi^*(s) \in \mathcal{\bar{A}}, \forall s \in \mathcal{S}.
             \]
@@ -195,9 +198,9 @@
       <div class="column">
         <div class="content has-text-justified">
           <p>
-            Our observation from computability theory is that the set of computable functions are strictly smaller than the set of all functions, this is analoguous to comparing the sizes of natural numbers to real numbers.
+            Our observation from computability theory is that the set of computable functions are strictly smaller than the set of all functions, this is analogous to comparing the sizes of natural numbers to real numbers.
             Likewise, we can make similar observations in machine learning, where if the model class is the set of linear functions and the classification problem is non-linearly separable, we cannot hope to find an optimal predictor.
-            In both cases, we can view the computable functions or the linear model class to be "resource bounded"---we cannot hope these functions to return the desired output immediately.
+            In both cases, we can view the computable functions or the linear model class to be "resource bounded"---we cannot hope for these functions to return the desired output immediately.
             We claim that this is what <a href="#reference_5">[5]</a> misses when discussing "thinking" as part of the decision process.
           </p>
 
@@ -217,7 +220,7 @@
 
           <p>
             Indeed, one traditional approach is to add a feature that captures \( x_1 x_2 \) which makes the problem linearly separable in this feature space.
-            Our idea is similar in that we will use the thought space to add extra dimensionality, but the core difference is that <strong>the agent has to locate the suitable feature itself</strong>.
+            Our idea is similar in that we will use the thought space to add extra dimensionality, but the core difference is that <strong>the agent has to locate an appropriate feature itself</strong>.
           </p>
 
           <p>
@@ -249,7 +252,7 @@
             Upon taking the thought action \( c \), the thought state becomes \( z = 1\).
             This policy then singles out the \( {11} \) string by outputting \( a = 0\), and outputting \( a = 1 \) for other states.
             Note that since the policy outputs the correct parity for \( s = [0, 0, 0] \), we can ignore the policy output for \( s = [0, 0, 1] \) as this state is never visited.
-            Simply speaking, the policy correctly predicts the parity of \( {00} \) immediately, and takes one thought step before correctly predicting the parity of \( {01} \), \( {10} \), and \( {11} \).
+            Put simply, the policy correctly predicts the parity of \( {00} \) immediately, and takes one thought step before correctly predicting the parity of \( {01} \), \( {10} \), and \( {11} \).
           </p>
 
           <p>
@@ -275,7 +278,7 @@
           <p>
             We will now focus on (1): How one can ensure a thought space actually expands policy expressiveness?
             Our intuition is that if the thought space can be as "general" as possible, then a policy has more chances to be more expressive.
-            The term "general" is fairly vague---here we use "universal computation" in computability theory to mean "general" as a universal computer can simulate any computable functions.
+            The term "general" is fairly vague---here we use "universal computation" in computability theory to mean "general" as a universal computer can simulate any computable function.
             [6] shows that (extended) autoregressive decoding with transformers (or RNNs) can simulate universal TMs, meaning that these models are effective universal computers!
             Thus, our way to construct a thought space is to use a causal transformer with (extended) autoregressive decoding---with finite state space we can remove the autoregressive decoding requirement and replace it with recursive modelling, e.g. TRM [3] or looped transformers.
           </p>
@@ -336,7 +339,7 @@
             So long as a linear policy can map one of these sequences perfectly, it is optimal given that the initial state is always \( \bar{s}_0 = 0 \).
             To do this, we cast this problem into a four-class classification problem, where given an optimal path \( \tau^* \), the objective is to minimize the 0-1 error, i.e., \( \min_{\pi \in \Pi} \ell(\pi, \tau^*) = \min_{\pi \in \Pi} \mathbb{E}_{(\bar{s}, \bar{a}) \in \tau^*} \left[ \mathbb{I} (\pi(\bar{s}) \neq \bar{a}) \right] \).
             With a scalar state and two unique optimal actions, this is equivalent to placing two (linear) boundaries on a line so that every point with the same unique optimal action lies on the same side.
-            In this case, it is clear that there does not exist a single point such that they are separable regardless of the optimal paths, i.e., \( \min_{\pi \in \Pi} \ell(\pi, \tau^*) > 0 \) for \( \tau^* \in \{\tau_1^*, \tau_2^*, \tau_3^*\} \).
+            In this case, there does not exist a single point such that they are separable regardless of the optimal paths, i.e., \( \min_{\pi \in \Pi} \ell(\pi, \tau^*) > 0 \) for \( \tau^* \in \{\tau_1^*, \tau_2^*, \tau_3^*\} \).
           </p>
 
           <figure id="fig_6">
@@ -353,21 +356,22 @@
 
           <p>
             We now experimentally show that linear policies can be optimal in our transformer-induced thought MDP.
-            We vary each agent by providing varying number of thought actions \( \lvert \mathcal{\bar{A}} \rvert = \{0, 1, 2, 4, 8 \} \).
+            We vary each agent by providing a varying number of thought actions \( \lvert \mathcal{\bar{A}} \rvert = \{0, 1, 2, 4, 8 \} \).
             The thought state space is \( \mathcal{Z} = \mathbb{R}^{8} \) and the thought transition is governed by a two-layered causal transformer with two attention heads.
             Each policy is represented as a linear function followed by a softmax function and we train each agent using proximal policy optimization (PPO).
-            Each PPO iteration collects 50 trajectories and perform three full-batch updates---in total we train the agent for 1,000 iterations.
+            Each PPO iteration collects 50 trajectories and perform three full-batch updates.
+            In total we train the agent for 1,000 iterations.
             We also train a linear value function using Monte-Carlo rollouts and compute the generalized advantage estimation (GAE).
             We use the Adam optimizer with learning rate \( \alpha = 0.01 \) to update the policy and value-function parameters.
-            For this experiment we are interested in evaluating the total reward and the proportional of thought actions in an episode.
+            For this experiment we are interested in evaluating the total reward and the proportion of thought actions in an episode.
             For each agent we run five random seeds and report the mean and \( 95\% \) confidence interval in Figure <a href="#fig_6">6</a>.
           </p>
 
           <p>
-            As expected we can see that without any thought actions, the agent is unable to obtain near-optimal performance, whereas the agents with thought actions, except for when \( \lvert \mathcal{\bar{A}} \rvert = 8 \), can obtain significantly better performances.
+            As expected we can see that without any thought actions, the agent is unable to obtain near-optimal performance, whereas the agents with thought actions, except for when \( \lvert \mathcal{\bar{A}} \rvert = 8 \), can obtain significantly better performance.
             However, we can see that as we increase \( \lvert \mathcal{\bar{A}} \rvert \) the proportion of thought action increases---in fact when \( \lvert \mathcal{\bar{A}} \rvert = 8 \) the agent just spends almost \( 80\% \) of the steps for thinking.
-            This is likely due to the increased difficulty of exploration---more thought actions means there could be exponentially many thought paths that may or may not lead to the optimal actions, in the worst case this becomes finding the needle in the haystack.
-            To draw an anthropomorphic analogy, this is similar to giving some a pen and a piece of paper---a scholar might be able to derive useful results while a toddler might not be able to even write with a pen.
+            This is likely due to the increased difficulty of exploration---including more thought actions means there could be exponentially many thought paths that may or may not lead to the optimal actions, in the worst case this becomes finding the needle in the haystack.
+            To draw an anthropomorphic analogy, this is similar to giving someone a pen and a piece of paper---a scholar might be able to derive useful results while a toddler might not be able to even write with a pen.
           </p>
 
       </div>
@@ -384,20 +388,20 @@
           <h4>Process vs architectural scaling</h4>
           <p>
             An interpretation of this work is that rather than spending resources on scaling the size of a model that is commonly fixed during inference, we can instead spend resources on computational steps.
-            One of the benefits here is that the thought space can be a completely different computational model, or even an (possibly uncomputable) oracle.
+            One of the benefits here is that the thought space can be a completely different computational model, or even a (possibly uncomputable) oracle.
             Indeed, one can formulate the thought space to be API calls in which the API can provide useful information for decision making <a href="#reference_8">[8]</a>.
             Likewise, one can formulate chain-of-thought reasoning <a href="#reference_2">[2]</a> as a way to increase computation.
             This flexibility enables a decoupling between architectural design (the model) and process design (the "thought" space).
           </p>
 
           <p>
-            The pragmatic benefit is somewhat clear as well, scaling the depth and width of a model positively correlates with the training cost---of course, techniques such as mixed precision and gradient accumulation/checkpointing help but at some point we will require new training methodology for continued scaling.
-            The counter argument here is that the (potential) increased inference cost can be as expensive, if not more expensive.
+            In terms of the pragmatic benefits, one can consider that scaling the depth and width of a model positively correlates with the training cost---of course, techniques such as mixed precision and gradient accumulation/checkpointing help but at some point we will require new training methodologies for continued scaling.
+            The counterargument here is that the (potential) increased inference cost can be equally expensive, if not more expensive.
             Nevertheless, this is not to say that we should not scale the architecture---instead I am saying that it is important to think about how we are scaling the architecture.
           </p>
 
           <p>
-            Another point that we must accept is the fact that a fixed-sized architecture without external memory is only a linearly-bounded TM, which is a more restricted computational model than a standard TM.
+            Another point that we must accept is the fact that a fixed-size architecture without external memory is only a linearly-bounded TM, which is a more restricted computational model than a standard TM.
             One argument here is that we do not realistically have unbounded memory.
             With the recent breakthrough by <a href="#reference_9">[9]</a> we can potentially use much less memory to find the correct solution (at the cost of increased runtime).
           </p>
@@ -414,13 +418,13 @@
           <h4>A small rant on anthropomorphic analogies</h4>
           <p>
             In the previous section I used the pen-and-paper analogy to describe some intuitions about how thought space might help.
-            I personally find this "anthropomorphization" to be potentially misleading for research.
+            I personally find this anthropomorphism to be potentially misleading for research.
             On the one hand, these analogies can be inspiring.
-            For example, the formulation of RL is inspired by how animal learns <a href="#reference_10">[10]</a> and one of the first neural network was inspired by the brain <a href="#reference_11">[11]</a>.
+            For example, the formulation of RL is inspired by how animals learn <a href="#reference_10">[10]</a> and one of the first neural networks was inspired by the brain <a href="#reference_11">[11]</a>.
             On the other hand, these analogies might mislead how these models truly operate.
-            For example, <a href="#reference_5">[5]</a> describes this additional process as a "thought process" and <a href="#reference_2">[2]</a> calls autoregressively generating tokens as "chain-of-thought reasoning".
+            For example, <a href="#reference_5">[5]</a> describes this additional process as a "thought process" and <a href="#reference_2">[2]</a> calls autoregressively generated tokens as "chain-of-thought reasoning".
             We can instead call "thought process" as an "intermediate computation process" or an "internal process", and nothing would have changed.
-            Indeed, the moment we use a TM to construct the "thought" space, do we say the TM is "thinking" when it is computing?
+            Indeed, once we use a TM to construct the "thought" space, do we say the TM is "thinking" when it is computing?
             Is a chain of computation equivalent to reasoning?
             If I must use anthropomorphic analogies, the work that illustrates "reasoning" helps with factual recall <a href="#reference_4">[4]</a> is closer to "memory anchoring" than "reasoning" (assuming that reasoning is about using a sequence of logical deductions to draw a conclusion).
             My point is that we should be clear about where the analogy works and when it does not.
@@ -459,7 +463,7 @@
     <p id="reference_1">[1] Nynexman4464. "Turing machine 2b.svg." Wikimedia Commons, Wikimedia Foundation (2008): https://commons.wikimedia.org/wiki/File:Turing_machine_2b.svg.</p>
     <p id="reference_2">[2] Wei, Jason, et al. "Chain-of-thought prompting elicits reasoning in large language models." Advances in neural information processing systems 35 (2022).</p>
     <p id="reference_3">[3] Jolicoeur-Martineau, Alexia. "Less is more: Recursive reasoning with tiny networks." arXiv preprint arXiv:2510.04871 (2025).</p>
-    <p id="reference_4">[4] Gekhman, Zorik, et al. "Thinking to recall: How reasoning unlocks parametric knowledge in llms." arXiv preprint arXiv:2603.09906 (2026).</p>
+    <p id="reference_4">[4] Gekhman, Zorik, et al. "Thinking to recall: How reasoning unlocks parametric knowledge in LLMs." arXiv preprint arXiv:2603.09906 (2026).</p>
     <p id="reference_5">[5] Hanna, Josiah, and Nicholas Corrado. "When Can Model-Free Reinforcement Learning be Enough for Thinking?." Advances in Neural Information Processing Systems 38 (2026).</p>
     <p id="reference_6">[6] Lewandowski, Alex, Marlos C. Machado, and Dale Schuurmans. "Universal computation is intrinsic to language model decoding." arXiv preprint arXiv:2601.08061 (2026).</p>
     <p id="reference_7">[7] Towers, Mark, et al. "Gymnasium: A standard interface for reinforcement learning environments." Advances in Neural Information Processing Systems 38 (2026).</p>
