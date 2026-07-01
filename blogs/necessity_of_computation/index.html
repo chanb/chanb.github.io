@@ -202,7 +202,7 @@
           <p>
             A classic result in computability theory shows us that the set of computable functions are strictly smaller than the set of all functions, this is analogous to comparing the sizes of natural numbers to real numbers.
             Likewise, in machine learning, if the model class is the set of linear functions and the classification problem is non-linearly separable, we cannot hope to find an optimal predictor.
-            In both cases, we can view the computable functions or the linear model class to be "resource bounded"---we cannot hope for these functions to return the desired output immediately.
+            In both cases, we can view the computable functions or the linear model class to be "resource bounded"---we cannot hope for these functions to return the desired output immediately (if ever).
             We claim that this is what <a href="#reference_5">[5]</a> misses when discussing "thinking" as part of the decision process.
           </p>
 
@@ -217,7 +217,7 @@
             \end{cases}
             \]
             where we represent \( \bar{s} = (x_1, x_2) \).
-            Clearly, if we consider a linear policy class \( \Pi = \{ \theta \in \mathbb{R}^{2 \times 2} | \arg\max_{\bar{a} \in \mathcal{\bar{A}}} \theta(\bar{a}) \bar{s} \} \), then no policy \( \pi \in \Pi \) that can obtain a \( +1 \) reward for all states \( \bar{s} \in \{0, 1\}^2 \) as the XOR problem is non-linearly separable.
+            Clearly, if we consider a linear policy class \( \Pi = \{ \theta \in \mathbb{R}^{2 \times 2} | \arg\max_{\bar{a} \in \mathcal{\bar{A}}} \theta(\bar{a}) \bar{s} \} \), then no policy \( \pi \in \Pi \) can obtain a \( +1 \) reward for all states \( \bar{s} \in \{0, 1\}^2 \) as the XOR problem is non-linearly separable.
           </p>
 
           <p>
